@@ -1,0 +1,7 @@
+{
+  "name": "gtgtrenerkurs",
+  "private": true,
+  "description": "Global Trainings: «Professional psixolog trener» landing sahifasi va Telegram bot (Vercel serverless)",
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
