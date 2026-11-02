@@ -24,7 +24,7 @@ const FORM_URL = SITE_URL + '?src=bot&to=yozilish';
 const COURSE = '«Professional psixolog trener»';
 const EVENT = '12-noyabr, payshanba, 15:00';
 const ADDRESS = 'Toshkent, Chilonzor, 11-a uy (Kohinur «Korzinka» ro‘parasi)';
-const MAP_URL = 'https://yandex.uz/maps/?text=Korzinka%20Kohinur%20Chilonzor%20Toshkent';
+const MAP_URL = 'https://yandex.uz/maps/org/global_trainings/17100811275/?lang=ru&ll=69.204693%2C41.273786&source=wizbiz_new_map_single&z=15';
 const PHONE = '+998 90 005 00 19';
 
 // ---------------------------------------------------------------- yordamchilar
