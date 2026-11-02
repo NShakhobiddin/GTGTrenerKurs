@@ -12,13 +12,14 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
   - `UzApos` bu Montserrat'ning faqat `‘ ’` belgilari. U O‘/G‘ dagi belgi "6" shaklida chiqishi uchun kerak, Manrope'da bu belgi to‘g‘ri chiziq ko‘rinishida.
   - Tashqi kutubxonalar (CDN): GSAP 3.12.5 + ScrollTrigger (cdnjs), Lenis 1.1.13 (unpkg). Ular yuklanmasa ham sahifa ishlaydi.
 - `media/`: sahifadagi videolar va rasmlar.
-  - `hero-m.jpg`: hero uchun harakatsiz rasm (telefon va Telegram'da ishlatiladi).
-  - `hero2.mp4`: hero video (faqat sichqonchali kompyuterda).
-  - `main.mp4` + `main.jpg`: **asosiy video** (3:18). Kanaldagi «Bugun psixolog bo‘lish shunchaki sertifikat emas» posti (t.me/Treningsuz/24489), manba `IMG_3435.MOV`.
-  - `v1.mp4` + `v1.jpg`: qo‘shimcha video (1:15), «Профессионал психолог» posti, manba `IMG_1206.MOV`.
-  - Mijoz talabi: sahifada **faqat shu 2 video** turadi. Qolgan videolar reklama uchun, ular qo‘yilmaydi.
-  - Videolar artifact limiti uchun 15 MB dan kichik kodlangan (`main.mp4` 540x960, ~14 MB).
-  - `m1–m4.jpg` (modul kartalari foni), `avatar.jpg`, `cta.jpg`, `hero2.mp4/jpg` (hero fon halqasi, asosiy videodan 12 soniya).
+  - `hero-m.jpg`: hero rasmi (hamma qurilmada harakatsiz rasm, sekin zoom effekti bilan).
+  - `main.mp4` + `main.jpg`: **saytdagi yagona video**, montaj qilingan asosiy video (3:25).
+    - Manba: `IMG_3435.MOV`, kanaldagi «Bugun psixolog bo‘lish shunchaki sertifikat emas» posti (t.me/Treningsuz/24489).
+    - Montajda: 3D logo, mavzu kartalari, CTA, «Rising Warmth» fon musiqasi (Gemini), ElevenLabs effektlari.
+    - Artifact limiti uchun 720x1280, ~14,7 MB qilib kodlangan. To‘liq 1080x1920 versiyasi repoda emas.
+  - Mijoz talabi: sahifada **faqat shu bitta video** turadi. Boshqa videolar qo‘yilmaydi.
+  - `portrait.jpg`: ustoz bo‘limidagi rasm (`IMG_1206.MOV` kadridan).
+  - `m1–m3.jpg`, `m4b.jpg` (modul kartalari foni), `avatar.jpg`, `cta.jpg`.
   - `og.jpg`: havola ulashilganda chiqadigan preview, 1200x630.
   - `icon-180.png`, `favicon-32.png`.
   - `logo.svg`: footerda CSS mask sifatida ishlatiladi.
@@ -41,20 +42,20 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
 
 ## Bo‘limlar (id bo‘yicha)
 
-1. `#top`: hero va countdown. «Kurs haqida video · 3:18» tugmasi asosiy videoni ochadi.
+1. `#top`: hero va countdown. «Kurs haqida video · 3:25» tugmasi asosiy videoni ochadi.
 2. Mavzular marquee'si.
 3. `#kurs`: asosiy video kartasi (`#kvid`, `data-open="0"`) va kursning 4 yo‘nalishi.
 4. Raqamlar: 3 oy, haftada 2 marta, 4 modul, 12 mavzu, 1 kun bepul.
 5. `#dastur`: «3 oyda nimalarni o‘rganasiz». 4 modul kartasi (grid), mavzular 01–12 raqamlangan.
 6. `#tamoyil`: manifest. Yarim oy to‘liq halqaga aylanadi (`#ring-inner`, `setRing`).
-7. `#ustoz`: bio va qo‘shimcha video (`data-open="1"`).
+7. `#ustoz`: bio va ustoz rasmi (`.portrait`).
 8. `#mos`: "Bu kurs sizga mosmi?".
 9. `#qanday`: 3 qadam.
 10. `#savollar`: FAQ.
 11. `#yozilish`: yakuniy CTA va forma.
 12. `#dock`: pastki panel.
 
-Pleyer ro‘yxati JS'dagi `vids` massivida: 0 bu `main.mp4`, 1 bu `v1.mp4`.
+Pleyer ro‘yxati JS'dagi `vids` massivida faqat `main.mp4`. Video bitta bo‘lgani uchun oldingi/keyingi tugmalari yashiriladi.
 
 URL parametrlari:
 - `?to=yozilish`: sahifa ochilishi bilan formaga o‘tadi.

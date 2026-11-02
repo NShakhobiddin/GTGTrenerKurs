@@ -290,6 +290,8 @@ main{overflow-x:clip}
 .kv-top{position:absolute;z-index:2;left:var(--s-200);right:var(--s-200);top:var(--s-200);display:flex;align-items:center;justify-content:space-between;gap:var(--s-100)}
 .kv-dur{padding:var(--s-25) var(--s-75);border-radius:var(--r-lg);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .kv-cap{position:absolute;z-index:2;left:var(--s-200);right:var(--s-200);bottom:var(--s-200);display:grid;gap:var(--s-25);padding:var(--s-100) var(--s-200);border-radius:var(--r-lg);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.portrait{position:relative;width:100%;max-width:520px;justify-self:center;aspect-ratio:4/5;border-radius:var(--r-3xl);overflow:hidden;background:var(--card)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .pillars{display:grid;gap:var(--s-100)}
 .pillars li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:var(--s-200);padding:var(--s-200);border-radius:var(--r-3xl);background:var(--bg-2);border:1px solid var(--line)}
 .pi{display:grid;place-items:center;width:var(--s-600);height:var(--s-600);border-radius:var(--r-lg);background:var(--accent-soft);color:var(--accent-ink)}
@@ -540,7 +542,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
         <p class="hero-sub body-3 md-body-7 hx">Dilshod Mannopov bilan 3 oylik amaliy kurs, darslar haftada 2 marta. Mijoz bilan ishlash, tranzakt analiz, notiqlik va o‘z treningingizni tuzishni o‘rganasiz.</p>
         <div class="hero-ctas hx">
           <a class="btn btn-primary btn-lg button-md magnetic" id="hero-cta" href="#yozilish">Bepul darsga yozilish <span class="arrow"><svg class="icon icon-sm"><use href="#i-arrow-right"/></svg></span></a>
-          <button class="textlink button-sm" type="button" data-open="0" data-cursor="Ko‘rish"><span class="pc"><svg class="icon icon-sm"><use href="#i-play-fill"/></svg></span>Kurs haqida video · 3:18</button>
+          <button class="textlink button-sm" type="button" data-open="0" data-cursor="Ko‘rish"><span class="pc"><svg class="icon icon-sm"><use href="#i-play-fill"/></svg></span>Kurs haqida video · 3:25</button>
         </div>
       </div>
       <dl class="meta hx">
@@ -553,7 +555,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
     <div class="hero-media" id="hero-media">
       <img class="hero-poster" src="media/hero-m.jpg" alt="Dilshod Mannopov" fetchpriority="high">
-      <video id="hero-video" muted loop playsinline preload="none" poster="media/hero2.jpg" data-src="media/hero2.mp4" aria-hidden="true" hidden></video>
       <div class="hm-tag"><img src="media/avatar.jpg" alt="" width="32" height="32"><div><span class="body-4">Dilshod Mannopov</span><span class="caption-5 muted">psixolog trener</span></div></div>
       <div class="hm-card" data-countdown>
         <div class="cd-live">
@@ -590,9 +591,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
 <!-- COURSE VIDEO -->
 <section class="section" id="kurs">
   <div class="wrap kurs">
-    <button class="kvid" id="kvid" type="button" data-open="0" data-cursor="Ko‘rish" aria-label="Kurs haqidagi videoni ovoz bilan ko‘rish, 3 daqiqa 18 soniya">
+    <button class="kvid" id="kvid" type="button" data-open="0" data-cursor="Ko‘rish" aria-label="Kurs haqidagi videoni ovoz bilan ko‘rish, 3 daqiqa 25 soniya">
       <img src="media/main.jpg" alt="" loading="lazy" width="720" height="1280">
-      <span class="kv-top"><span class="pill caption-4"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</span><span class="kv-dur caption-4 num">3:18</span></span>
+      <span class="kv-top"><span class="pill caption-4"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</span><span class="kv-dur caption-4 num">3:25</span></span>
       <span class="tplay"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></span>
       <span class="kv-cap"><span class="title-2">Kurs haqida ustozdan</span><span class="caption-5 muted">Dilshod Mannopov · 3 daqiqa</span></span>
     </button>
@@ -730,12 +731,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
 <section class="section" id="ustoz">
   <div class="wrap">
     <div class="bio">
-      <button class="kvid" type="button" data-open="1" data-cursor="Ko‘rish" aria-label="Ustozning «Professional psixolog» videosini ovoz bilan ko‘rish, 1 daqiqa 15 soniya">
-        <img src="media/v1.jpg" alt="" loading="lazy" width="464" height="824">
-        <span class="kv-top"><span class="pill caption-4"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</span><span class="kv-dur caption-4 num">1:15</span></span>
-        <span class="tplay"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></span>
-        <span class="kv-cap"><span class="title-2">Professional psixolog</span><span class="caption-5 muted">Dilshod Mannopov · 1 daqiqa</span></span>
-      </button>
+      <figure class="portrait" data-reveal><img src="media/portrait.jpg" alt="Dilshod Mannopov" loading="lazy" width="464" height="824"></figure>
       <div class="bio-text" data-reveal>
         <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Ustoz bilan tanishing</span>
         <h2 class="heading-3 md-heading-1">Dilshod Mannopov</h2>
@@ -1081,10 +1077,10 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
   /* video player */
   var vids=[
-    {src:'media/main.mp4',poster:'media/main.jpg',title:'Kurs haqida ustozdan',sub:'Dilshod Mannopov · 3:18'},
-    {src:'media/v1.mp4',poster:'media/v1.jpg',title:'Professional psixolog',sub:'Dilshod Mannopov · 1:15'}
+    {src:'media/main.mp4',poster:'media/main.jpg',title:'Kurs haqida ustozdan',sub:'Dilshod Mannopov · 3:25'}
   ];
   var dlg=$('#player'), pv=$('#pv'), pvErr=$('#pv-err'), cur=0, heroV=$('#hero-video'), opener=null;
+  if(vids.length<2){$('#pv-prev').hidden=true;$('#pv-next').hidden=true}
   function load(i){
     cur=(i+vids.length)%vids.length;var v=vids[cur];
     pvErr.hidden=true;pv.hidden=false;dlg.classList.toggle('is-h',!!v.h);
@@ -1284,7 +1280,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
   G.from('.hl > span',{yPercent:110,duration:1.2,ease:EASE,stagger:.09,delay:.1});
   G.from('.hx',{y:24,opacity:0,duration:1,ease:EASE,stagger:.08,delay:.35});
   G.from('#hero-media',{opacity:0,scale:.96,duration:1.4,ease:EASE,delay:.05});
-  G.to('#hero-video',{yPercent:4,scale:1.1,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:true}});
 
   /* marquee: endless loop whose speed follows scroll velocity */
   var mq=$('#mq'), group=$('.mq-group',mq); mq.appendChild(group.cloneNode(true)); $$('.mq-group',mq)[1].setAttribute('aria-hidden','true');
