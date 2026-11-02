@@ -70,17 +70,22 @@ URL parametrlari:
 `lite` rejimi yoqiladigan holatlar: sensorli qurilma, Telegram ichidagi brauzer yoki Mini App, yoki `saveData` yoqilgan bo‘lsa.
 
 Bu rejimda:
-- Hech qanday video o‘zi o‘ynamaydi va oldindan yuklanmaydi.
+- Sahifa ochilganda video yuklanmaydi. Asosiy video karta ekranga 200px yaqinlashgandagina yuklana boshlaydi.
 - Hero'da harakatsiz rasm (`hero-m.jpg`) ko‘rinadi, unga sekin zoom effekti beriladi.
-- Videolar faqat bosilganda pleyerda ochiladi. Telefonda pleyer butun ekranni egallaydi.
-- Pleyer ochiq bo‘lganda sahifa skrolli qulflanadi.
 - Lenis (silliq skroll) o‘chiriladi.
 - Fon videolariga `pointer-events:none` berilgan, shuning uchun ular teginishlarni ushlab qolmaydi.
+
+**Asosiy video (`#kvid`, `#kv-video`)** kartaning o‘zida o‘ynaydi (hamma qurilmada, 9:16):
+- Karta 60% ko‘ringanda **ovoz bilan** o‘zi boshlanadi, 30% dan kam ko‘rinsa o‘zi pauza bo‘ladi, qaytib kelganda davom etadi.
+- Brauzer ovozli autoplay'ni bloklasa, video ovozsiz boshlanadi va «Ovozni yoqish» tugmasi chiqadi. Foydalanuvchining birinchi teginishida ovoz o‘zi yoqiladi.
+- Kartaga bosish: to‘xtagan bo‘lsa ovoz bilan boshlaydi, ovozsiz bo‘lsa ovozni yoqadi, aks holda pauza qiladi.
+- Hero'dagi `data-open` tugmalari videoni ovoz bilan boshlab, kartaga skroll qiladi. Modal pleyer (`#player`) endi ishlatilmaydi.
 
 Sahifa yoki Mini App fonga o‘tganda barcha videolar pauza qilinadi.
 
 **Mini App** (`telegram-web-app.js` faqat Telegram ichida dinamik yuklanadi):
-- `ready` va `expand` chaqiriladi. Header, fon va pastki panel rangi qora qilinadi. `disableVerticalSwipes` yoqiladi.
+- `ready` va `expand` chaqiriladi. Telefonda (ios/android, Bot API 8.0+) `requestFullscreen` bilan **to‘liq ekranda** ochiladi.
+  - Telegram tugmalari tagida kontent qolmasligi uchun `--tg-top` = `safeAreaInset.top` + `contentSafeAreaInset.top`. Nav, menyu, hero va tepadagi qora qatlam shunga suriladi. Header, fon va pastki panel rangi qora qilinadi. `disableVerticalSwipes` yoqiladi.
 - **MainButton** matni holatga qarab o‘zgaradi:
   - odatda: «Bepul darsga yozilish» (bosilsa formaga o‘tadi);
   - forma ko‘rinib turganda: «Arizani yuborish» (bosilsa formani yuboradi).
