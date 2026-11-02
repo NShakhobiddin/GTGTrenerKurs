@@ -36,6 +36,10 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
   - `logo.svg`, `logo-white.svg`, `logo-dark.svg`: asl logoning vektor ko‘rinishi (asl JPG ustiga qo‘yib solishtirilgan).
   - `bot-avatar.png` (640x640), `bot-description.jpg` (640x360), `icon-512.png`, `mark.svg`.
 - `docs/BOT_SOZLASH.md`: BotFather va Vercel sozlash bo‘yicha qadamma-qadam yo‘riqnoma.
+- `tgcloud-bot/`: **asosiy bot varianti**, Telegram Serverless (BotFather → Serverless). Bitta fayl `tgcloud/handlers/message.js`.
+  - `/start`, raqam yuborish, Mini App forma (`sendData`) va savollar @Global_Admin19 ga xabar bo‘lib boradi.
+  - Administrator chat ID'si bazaga o‘zi yoziladi: @Global_Admin19 botda `/start` bosadi.
+  - Ishga tushirish yo‘riqnomasi: `tgcloud-bot/README.md`. Vercel varianti (`api/`, `lib/`) zaxira sifatida qoldi.
 - `.env.example`: kerakli o‘zgaruvchilar ro‘yxati.
   - `BOT_TOKEN`, `ADMIN_CHAT_ID`, `SITE_URL`, `WEBHOOK_SECRET`, `SETUP_KEY`, `ALLOWED_ORIGINS`.
   - **Tokenni hech qachon kodga yoki repoga yozma.**
