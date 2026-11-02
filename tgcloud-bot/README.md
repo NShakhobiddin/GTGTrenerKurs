@@ -8,9 +8,9 @@ Butun bot bitta faylda: `tgcloud/handlers/message.js`. Bazadagi jadvallarni fayl
 
 | Foydalanuvchi | Bot | @Global_Admin19 ga keladigan xabar |
 |---|---|---|
-| Botga kiradi (`/start`) | Salomlashadi, ikki tugma chiqaradi: «📝 Arizani to‘ldirish» va «📱 Raqamni yuborish» | 👤 Botga yangi odam kirdi: ismi, username, profil havolasi |
+| Botga kiradi (`/start`) | Salomlashadi, ikki tugma chiqaradi: «🌐 Kurs sayti va yozilish» va «📱 Raqamni yuborish» | 👤 Botga yangi odam kirdi: ismi, username, profil havolasi |
 | «📱 Raqamni yuborish» | Rahmat aytadi | 📱 Raqam qoldirdi: ismi va telefoni |
-| «📝 Arizani to‘ldirish» → saytdagi forma | Rahmat aytadi | 📝 Yangi ariza: forma maydonlarining hammasi |
+| «🌐 Kurs sayti va yozilish» → sayt to‘liq ochiladi, forma orqali yuboradi | Rahmat aytadi | 📝 Yangi ariza: forma maydonlarining hammasi |
 | Raqamini qo‘lda yozadi | Rahmat aytadi | 📱 Raqam qoldirdi |
 | Savol yozadi | «Administratorga yetkazildi» deydi | 💬 Savol / xabar |
 
@@ -35,6 +35,6 @@ Yaratilgan loyihadagi `tgcloud/handlers/message.js` o‘rniga shu papkadagi fayl
 
 ## Muhim
 
-- Forma arizasi botga avtomatik kelishi uchun saytni botdagi **«📝 Arizani to‘ldirish»** tugmasi orqali ochish kerak. Telegram `sendData` imkoniyatini faqat shu turdagi tugma uchun beradi.
+- Forma arizasi botga avtomatik kelishi uchun saytni botdagi **«🌐 Kurs sayti va yozilish»** tugmasi orqali ochish kerak. Telegram `sendData` imkoniyatini faqat shu turdagi tugma uchun beradi.
 - Sayt menyu tugmasidan ochilsa, forma ham ishlaydi. Unda ariza @Global_Admin19 chatiga tayyor xabar bo‘lib ochiladi, foydalanuvchi faqat «Yuborish»ni bosadi.
 - Sozlamalar fayl boshida: `ADMIN_USERNAME`, `SITE_URL`, sana, manzil va telefon.

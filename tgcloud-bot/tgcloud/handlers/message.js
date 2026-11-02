@@ -4,7 +4,7 @@
 // Ma’lumotlar bazasi jadvallarini fayl o‘zi yaratadi (Database bo‘limida hech narsa qilish shart emas).
 //
 // Nima qiladi:
-//   /start          → kutib olish xabari + «Arizani to‘ldirish» (Mini App) va «Raqamni yuborish» tugmalari;
+//   /start          → kutib olish xabari + «Kurs sayti va yozilish» (Mini App) va «Raqamni yuborish» tugmalari;
 //                     odam botga birinchi marta kirsa, administratorga qisqa ma’lumoti boradi.
 //   Raqam yuborsa   → ismi va telefoni administratorga boradi.
 //   Formani yuborsa → saytdagi to‘liq ariza (Mini App sendData) administratorga boradi.
@@ -20,7 +20,7 @@ import { sql } from 'sdk/db';
 const ADMIN_USERNAME = 'Global_Admin19';            // arizalar shu profilga keladi
 const ADMIN_CHAT_ID = 0;                            // ixtiyoriy: raqamini bilsangiz yozing, aks holda 0
 const SITE_URL = 'https://nshakhobiddin.github.io/GTGTrenerKurs/';
-const FORM_URL = SITE_URL + '?src=bot&to=yozilish';
+const APP_URL = SITE_URL + '?src=bot';                // sayt boshidan to‘liq ochiladi
 const COURSE = '«Professional psixolog trener»';
 const EVENT = '12-noyabr, payshanba, 15:00';
 const ADDRESS = 'Toshkent, Chilonzor, 11-a uy (Kohinur «Korzinka» ro‘parasi)';
@@ -66,7 +66,7 @@ function whoLines(u) {
 
 const userKeyboard = {
   keyboard: [
-    [{ text: '📝 Arizani to‘ldirish', web_app: { url: FORM_URL } }],
+    [{ text: '🌐 Kurs sayti va yozilish', web_app: { url: APP_URL } }],
     [{ text: '📱 Raqamni yuborish', request_contact: true }],
   ],
   resize_keyboard: true,
@@ -283,7 +283,7 @@ export default async function (message) {
       `📍 ${ADDRESS}`,
       '',
       'Yozilishning ikki yo‘li bor:',
-      '📝 <b>Arizani to‘ldirish</b>: qisqa forma, 1 daqiqa',
+      '🌐 <b>Kurs sayti va yozilish</b>: kurs haqida hammasi, video va qisqa forma',
       '📱 <b>Raqamni yuborish</b>: bir bosishda, administrator o‘zi qo‘ng‘iroq qiladi',
       '',
       'Savolingiz bo‘lsa, shu yerga yozing.',
@@ -298,7 +298,7 @@ export default async function (message) {
   if (message.web_app_data) {
     const a = appFromForm(message.web_app_data.data);
     if (!a) {
-      await send(chatId, 'Arizani o‘qib bo‘lmadi. Iltimos, «📝 Arizani to‘ldirish» tugmasi orqali qayta yuboring yoki raqamingizni yuboring.', { reply_markup: userKeyboard });
+      await send(chatId, 'Arizani o‘qib bo‘lmadi. Iltimos, «🌐 Kurs sayti va yozilish» tugmasi orqali qayta yuboring yoki raqamingizni yuboring.', { reply_markup: userKeyboard });
       return;
     }
     await db.run(sql`UPDATE gt_users SET phone = ${a.phone} WHERE tg_id = ${from.id}`);
