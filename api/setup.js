@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     menu_button: { type: 'web_app', text: 'Kurs', web_app: { url: env.site } },
   });
   await run('Bot tavsifi', 'setMyDescription', {
-    description: `Global Trainings Group: ${COURSE} kursi. Ustoz Dilshod Mannopov. 5 oy, haftada 3 marta, onlayn yoki oflayn. Bepul tanishtiruv kuni: 12-noyabr, 15:00, Toshkent, Chilonzor. Yozilish uchun «Start» tugmasini bosing.`,
+    description: `Global Trainings Group: ${COURSE} kursi. Ustoz Dilshod Mannopov. 3 oy, haftada 2 marta, onlayn yoki oflayn. Bepul tanishtiruv kuni: 12-noyabr, 15:00, Toshkent, Chilonzor. Yozilish uchun «Start» tugmasini bosing.`,
   });
   await run('Qisqa tavsif', 'setMyShortDescription', {
     short_description: `${COURSE} kursi. 1-kun bepul: 12-noyabr, 15:00.`,

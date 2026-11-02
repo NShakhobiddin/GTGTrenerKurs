@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Professional psixolog trener</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Dilshod Mannopov bilan 5 oylik «Professional psixolog trener» kursi. Birinchi kun bepul: 12-noyabr, 15:00, Toshkent, Chilonzor.">
+<meta name="description" content="Dilshod Mannopov bilan 3 oylik «Professional psixolog trener» kursi, haftada 2 marta. Birinchi kun bepul: 12-noyabr, 15:00, Toshkent, Chilonzor.">
 <meta property="og:title" content="Professional psixolog trener · Global Trainings Group">
-<meta property="og:description" content="5 oylik amaliy kurs. Birinchi tanishtiruv kuni bepul: 12-noyabr, 15:00.">
+<meta property="og:description" content="3 oylik amaliy kurs, haftada 2 marta. Birinchi tanishtiruv kuni bepul: 12-noyabr, 15:00.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#000000">
 <meta name="gt-api" content="">
@@ -247,46 +247,57 @@ main{overflow-x:clip}
 .stat.wide{grid-column:1 / -1}
 @media (min-width:900px){.stats{grid-template-columns:repeat(5,minmax(0,1fr))}.stat.wide{grid-column:auto}}
 
-/* ---------- program (horizontal pin) ---------- */
+/* ---------- program grid ---------- */
 .program-head{margin-bottom:var(--s-600)}
-.track{display:grid;gap:var(--s-200);max-width:1280px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-@media (min-width:768px){.track{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
-.mcard{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s-400);min-height:520px;padding:var(--s-300);border-radius:var(--r-3xl);overflow:hidden;background:var(--card);isolation:isolate}
-.mcard > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08)}
+.mgrid{display:grid;gap:var(--s-200)}
+.mcard{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s-400);min-height:440px;padding:var(--s-300);border-radius:var(--r-3xl);overflow:hidden;background:var(--card);isolation:isolate}
+.mcard > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.1)}
 .mcard::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--tint-strong)}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-200)}
 .mc-num{font-size:4.5rem;line-height:1;font-weight:600;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7);font-variant-numeric:tabular-nums}
 .pill{display:inline-flex;align-items:center;gap:var(--s-50);padding:var(--s-50) var(--s-100);border-radius:var(--r-full);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .mc-body{display:grid;gap:var(--s-300);max-width:620px}
+.mc-lab{display:block;margin-bottom:var(--s-100);color:var(--accent-ink)}
 .mc-topics{display:grid;gap:var(--s-100)}
-.mc-topics li{display:flex;gap:var(--s-100);align-items:flex-start;color:var(--fg-2)}
-.mc-topics .icon{color:var(--accent-ink);margin-top:var(--s-25)}
-.mcard.end{background:var(--accent);justify-content:space-between}
+.mc-topics li{display:flex;gap:var(--s-100);align-items:baseline;color:var(--fg-2)}
+.mc-topics .tn{flex:none;min-width:var(--s-300);color:var(--accent-ink)}
+.mcard.end{background:var(--accent);min-height:0}
 .mcard.end::before{display:none}
 .mcard.end .big-cres{position:absolute;right:-12%;bottom:-18%;width:70%;max-width:520px;aspect-ratio:1;fill:rgba(255,255,255,.12);z-index:-1}
 .mcard.end p{color:rgba(255,255,255,.82)}
-.hprog{display:none;margin-top:var(--s-400);height:2px;background:var(--line);border-radius:var(--r-full);overflow:hidden}
-.hprog i{display:block;height:100%;background:var(--accent-ink);transform-origin:0 50%;transform:scaleX(0)}
+.mcard.end .btn{align-self:flex-start}
 @media (min-width:768px){.mcard{padding:var(--s-500)}}
-.is-h .program-pin{height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-top:var(--s-800);padding-bottom:var(--s-300)}
-.is-h .program-head{margin-bottom:var(--s-400)}
-.is-h .track{display:flex;gap:var(--s-300);width:max-content;max-width:none;margin-inline:0;padding-left:max(40px,calc((100vw - 1280px) / 2 + 40px));padding-right:max(40px,env(safe-area-inset-right,0px))}
-.is-h .mcard{width:min(72vw,960px);height:min(58svh,600px);min-height:420px;flex:none}
-.is-h .mcard.end{width:min(46vw,560px)}
-.is-h .hprog{display:block}
+@media (min-width:900px){
+  .mgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-300)}
+  .mcard{min-height:480px}
+  .mcard.end{grid-column:1 / -1;min-height:0;flex-direction:row;align-items:flex-end;gap:var(--s-600)}
+  .mcard.end .btn{align-self:flex-end}
+}
 
-/* ---------- trailer + bio ---------- */
-.trailer-head{display:grid;gap:var(--s-200);justify-items:start;margin-bottom:var(--s-600)}
-.tcard{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:var(--r-3xl);overflow:hidden;background:var(--card);border:0;padding:0;cursor:pointer;transform-origin:50% 50%}
-.tcard video,.tcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tcard::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.28);transition:background-color 500ms var(--ease)}
-.tcard:hover::after{background:rgba(0,0,0,.4)}
+/* ---------- course video + teacher ---------- */
+.kurs{display:grid;gap:var(--s-600);align-items:center}
+.kurs-text{display:grid;gap:var(--s-400);min-width:0}
+.kurs-text .head{max-width:640px}
+.kvid{position:relative;display:block;width:100%;max-width:520px;justify-self:center;aspect-ratio:4/5;border-radius:var(--r-3xl);overflow:hidden;background:var(--card);border:0;padding:0;cursor:pointer;text-align:left;color:var(--fg);isolation:isolate}
+.kvid > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;transition:transform 1200ms var(--ease)}
+.kvid::after{content:"";position:absolute;inset:0;background:#000000;opacity:.2;transition:opacity 500ms var(--ease)}
+.kvid:hover > img{transform:scale(1.04)}
+.kvid:hover::after{opacity:.32}
 .tplay{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:var(--s-900);height:var(--s-900);margin:-48px 0 0 -48px;border-radius:var(--r-full);background:var(--fg);color:var(--bg);transition:transform 500ms var(--ease)}
-.tcard:hover .tplay{transform:scale(1.08)}
-.tcap{position:absolute;z-index:2;left:var(--s-200);bottom:var(--s-200);display:flex;align-items:center;gap:var(--s-100);padding:var(--s-75) var(--s-100);border-radius:var(--r-xl);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.bio{display:grid;gap:var(--s-600);margin-top:var(--s-900);align-items:center}
-.portrait{position:relative;border-radius:var(--r-3xl);overflow:hidden;aspect-ratio:4/5;background:var(--card)}
-.portrait img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;object-position:50% 20%}
+.tplay::before{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.8);animation:ping 2.4s var(--ease) infinite}
+@keyframes ping{from{transform:scale(1);opacity:.9}to{transform:scale(1.6);opacity:0}}
+.kvid:hover .tplay{transform:scale(1.08)}
+.kv-top{position:absolute;z-index:2;left:var(--s-200);right:var(--s-200);top:var(--s-200);display:flex;align-items:center;justify-content:space-between;gap:var(--s-100)}
+.kv-dur{padding:var(--s-25) var(--s-75);border-radius:var(--r-lg);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.kv-cap{position:absolute;z-index:2;left:var(--s-200);right:var(--s-200);bottom:var(--s-200);display:grid;gap:var(--s-25);padding:var(--s-100) var(--s-200);border-radius:var(--r-lg);background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.pillars{display:grid;gap:var(--s-100)}
+.pillars li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:var(--s-200);padding:var(--s-200);border-radius:var(--r-3xl);background:var(--bg-2);border:1px solid var(--line)}
+.pi{display:grid;place-items:center;width:var(--s-600);height:var(--s-600);border-radius:var(--r-lg);background:var(--accent-soft);color:var(--accent-ink)}
+.kurs-foot{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-200) var(--s-300)}
+.kf-meta{display:inline-flex;align-items:center;gap:var(--s-75)}
+.kf-meta .icon{color:var(--accent-ink)}
+@media (min-width:640px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.pillars li{grid-template-columns:minmax(0,1fr);align-items:start;align-content:start}}
+.bio{display:grid;gap:var(--s-600);align-items:center}
 .bio-text{display:grid;gap:var(--s-300);min-width:0}
 .bio-text > p{color:var(--muted);max-width:560px}
 .quote{display:grid;gap:var(--s-300);padding:var(--s-400);border-radius:var(--r-3xl);background:var(--bg-2);border:1px solid var(--line)}
@@ -294,29 +305,10 @@ main{overflow-x:clip}
 .who{display:flex;align-items:center;gap:var(--s-100)}
 .who img{width:var(--s-600);height:var(--s-600);border-radius:var(--r-full);object-fit:cover}
 .who div{display:grid}
-@media (min-width:1024px){.bio{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s-800)}}
-
-/* ---------- video library ---------- */
-.rail-wrap{margin-top:var(--s-600)}
-.rail{display:flex;gap:var(--s-200);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:var(--s-75);overscroll-behavior-x:contain;cursor:grab}
-.rail::-webkit-scrollbar{display:none}
-.rail.dragging{cursor:grabbing;scroll-snap-type:none}
-.rail.dragging .vcard{pointer-events:none}
-@media (min-width:768px){.rail{gap:var(--s-300);padding-left:max(40px,calc((100vw - 1280px) / 2 + 40px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
-.vcard{flex:none;width:220px;display:grid;gap:var(--s-100);scroll-snap-align:start;padding:0;border:0;background:none;text-align:left;cursor:pointer}
-.vmedia{position:relative;aspect-ratio:9/16;border-radius:var(--r-3xl);overflow:hidden;background:var(--card)}
-.vmedia img,.vmedia video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 800ms var(--ease),opacity 500ms var(--ease)}
-.vmedia video{opacity:0}
-.vcard.previewing .vmedia video{opacity:1}
-.vcard:hover .vmedia img{transform:scale(1.05)}
-.vmedia .sk{position:absolute;inset:0;background:var(--card);animation:pulse 1.4s var(--ease) infinite}
-@keyframes pulse{50%{opacity:.5}}
-.vplay{position:absolute;left:var(--s-100);bottom:var(--s-100);display:grid;place-items:center;width:var(--s-600);height:var(--s-600);border-radius:var(--r-full);background:var(--fg);color:var(--bg);transition:transform 500ms var(--ease)}
-.vcard:hover .vplay{transform:scale(1.1)}
-.vdur{position:absolute;right:var(--s-100);top:var(--s-100);padding:var(--s-25) var(--s-75);border-radius:var(--r-xl);background:var(--glass);font-variant-numeric:tabular-nums;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.vcap{display:grid}
-@media (min-width:768px){.vcard{width:260px}}
-.rail-ctrls{display:flex;gap:var(--s-75)}
+@media (min-width:1024px){
+  .kurs,.bio{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s-800)}
+  .kvid{aspect-ratio:9/16;max-width:none;width:min(100%,calc((100svh - 160px) * .5625))}
+}
 
 /* ---------- fit check ---------- */
 .fit{margin-top:var(--s-600);display:grid;gap:var(--s-100)}
@@ -477,7 +469,7 @@ textarea:focus-visible{outline:2px solid var(--focus);outline-offset:0;border-co
 .hero-poster{animation:kb 16s var(--ease) infinite alternate}
 .hero-live .hero-poster{animation:none}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
-.hero-media video,.hero-poster,.tcard video,.tcard img,.vmedia video,.vmedia img{pointer-events:none}
+.hero-media video,.hero-poster,.kvid > img{pointer-events:none}
 html.modal-open,html.modal-open body{overflow:hidden}
 @media (max-width:767px){
   .player,.player.is-h{width:100%;height:100%;max-width:none;max-height:none;margin:0;border:0;border-radius:0;flex-direction:column;background:#000000}
@@ -500,7 +492,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
 <body>
 
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-chats-circle" viewBox="0 0 256 256"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"/></symbol><symbol id="i-presentation-chart" viewBox="0 0 256 256"><path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176ZM104,120v24a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm32-16v40a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v56a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-users-three" viewBox="0 0 256 256"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></symbol><symbol id="i-flower-lotus" viewBox="0 0 256 256"><path d="M245.83,121.63a15.53,15.53,0,0,0-9.52-7.33,73.51,73.51,0,0,0-22.17-2.22c4-19.85,1-35.55-2.06-44.86a16.15,16.15,0,0,0-18.79-10.88,85.53,85.53,0,0,0-28.55,12.12,94.58,94.58,0,0,0-27.11-33.25,16.05,16.05,0,0,0-19.26,0A94.48,94.48,0,0,0,91.26,68.46,85.53,85.53,0,0,0,62.71,56.34,16.15,16.15,0,0,0,43.92,67.22c-3,9.31-6,25-2.06,44.86a73.51,73.51,0,0,0-22.17,2.22,15.53,15.53,0,0,0-9.52,7.33,16,16,0,0,0-1.6,12.27c3.39,12.57,13.8,36.48,45.33,55.32S113.13,208,128.05,208s42.67,0,74-18.78c31.53-18.84,41.94-42.75,45.33-55.32A16,16,0,0,0,245.83,121.63ZM59.14,72.14a.2.2,0,0,1,.23-.15A70.43,70.43,0,0,1,85.18,83.66,118.65,118.65,0,0,0,80,119.17c0,18.74,3.77,34,9.11,46.28A123.59,123.59,0,0,1,69.57,140C51.55,108.62,55.3,84,59.14,72.14Zm3,103.35C35.47,159.57,26.82,140.05,24,129.7a59.82,59.82,0,0,1,22.5-1.17,129.08,129.08,0,0,0,9.15,19.41,142.28,142.28,0,0,0,34,39.56A114.92,114.92,0,0,1,62.1,175.49ZM128,190.4c-9.33-6.94-32-28.23-32-71.23C96,76.7,118.38,55.24,128,48c9.62,7.26,32,28.72,32,71.19C160,162.17,137.33,183.46,128,190.4ZM170.82,83.66A70.43,70.43,0,0,1,196.63,72a.2.2,0,0,1,.23.15C200.7,84,204.45,108.62,186.43,140a123.32,123.32,0,0,1-19.54,25.48c5.34-12.26,9.11-27.54,9.11-46.28A118.65,118.65,0,0,0,170.82,83.66ZM232,129.72c-2.77,10.25-11.4,29.81-38.09,45.77a114.92,114.92,0,0,1-27.55,12,142.28,142.28,0,0,0,34-39.56,129.08,129.08,0,0,0,9.15-19.41A59.69,59.69,0,0,1,232,129.71Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol><symbol id="i-telegram-logo" viewBox="0 0 256 256"><path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-certificate" viewBox="0 0 256 256"><path d="M128,136a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16h48A8,8,0,0,1,128,136Zm-8-40H72a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm112,65.47V224A8,8,0,0,1,220,231l-24-13.74L172,231A8,8,0,0,1,160,224V200H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216a16,16,0,0,1,16,16V86.53a51.88,51.88,0,0,1,0,74.94ZM160,184V161.47A52,52,0,0,1,216,76V56H40V184Zm56-12a51.88,51.88,0,0,1-40,0v38.22l16-9.16a8,8,0,0,1,7.94,0l16,9.16Zm16-48a36,36,0,1,0-36,36A36,36,0,0,0,232,124Z"/></symbol><symbol id="i-monitor-play" viewBox="0 0 256 256"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Zm-3.56-110.66-48-32A8,8,0,0,0,104,88v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,137.05V103l25.58,17Z"/></symbol><symbol id="i-speaker-high" viewBox="0 0 256 256"><path d="M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,207.64,88,164.09V91.91l56-43.55Zm54-106.08a40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.58,24,24,0,0,0,0-31.72,8,8,0,0,1,12-10.58ZM248,128a79.9,79.9,0,0,1-20.37,53.34,8,8,0,0,1-11.92-10.67,64,64,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67A79.83,79.83,0,0,1,248,128Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-hourglass-medium" viewBox="0 0 256 256"><path d="M200,75.64V40a16,16,0,0,0-16-16H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64ZM72,40H184V75.64L178.23,80H77.33L72,76Zm56,78L98.67,96h58.4Zm56,98H72V180l48-36v24a8,8,0,0,0,16,0V144.08l48,36.28Z"/></symbol><symbol id="i-globe-hemisphere-east" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a87.5,87.5,0,0,1,48,14.28V74L153.83,99.74,122.36,104l-.31-.22L102.38,90.92A16,16,0,0,0,79.87,95.1L58.93,126.4a16,16,0,0,0-2.7,8.81L56,171.44l-3.27,2.15A88,88,0,0,1,128,40ZM62.29,186.47l2.52-1.65A16,16,0,0,0,72,171.53l.21-36.23L93.17,104a3.62,3.62,0,0,0,.32.22l19.67,12.87a15.94,15.94,0,0,0,11.35,2.77L156,115.59a16,16,0,0,0,10-5.41l22.17-25.76A16,16,0,0,0,192,74V67.67A87.87,87.87,0,0,1,211.77,155l-16.14-14.76a16,16,0,0,0-16.93-3l-30.46,12.65a16.08,16.08,0,0,0-9.68,12.45l-2.39,16.19a16,16,0,0,0,11.77,17.81L169.4,202l2.36,2.37A87.88,87.88,0,0,1,62.29,186.47ZM185,195l-4.3-4.31a16,16,0,0,0-7.26-4.18L152,180.85l2.39-16.19L184.84,152,205,170.48A88.43,88.43,0,0,1,185,195Z"/></symbol><symbol id="i-play-fill" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></symbol><symbol id="i-pause-fill" viewBox="0 0 256 256"><path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"/></symbol><symbol id="i-quotes" viewBox="0 0 256 256"><path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"/></symbol><symbol id="i-arrow-down" viewBox="0 0 256 256"><path d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-play-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-chats-circle" viewBox="0 0 256 256"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"/></symbol><symbol id="i-presentation-chart" viewBox="0 0 256 256"><path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176ZM104,120v24a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm32-16v40a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v56a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-users-three" viewBox="0 0 256 256"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></symbol><symbol id="i-flower-lotus" viewBox="0 0 256 256"><path d="M245.83,121.63a15.53,15.53,0,0,0-9.52-7.33,73.51,73.51,0,0,0-22.17-2.22c4-19.85,1-35.55-2.06-44.86a16.15,16.15,0,0,0-18.79-10.88,85.53,85.53,0,0,0-28.55,12.12,94.58,94.58,0,0,0-27.11-33.25,16.05,16.05,0,0,0-19.26,0A94.48,94.48,0,0,0,91.26,68.46,85.53,85.53,0,0,0,62.71,56.34,16.15,16.15,0,0,0,43.92,67.22c-3,9.31-6,25-2.06,44.86a73.51,73.51,0,0,0-22.17,2.22,15.53,15.53,0,0,0-9.52,7.33,16,16,0,0,0-1.6,12.27c3.39,12.57,13.8,36.48,45.33,55.32S113.13,208,128.05,208s42.67,0,74-18.78c31.53-18.84,41.94-42.75,45.33-55.32A16,16,0,0,0,245.83,121.63ZM59.14,72.14a.2.2,0,0,1,.23-.15A70.43,70.43,0,0,1,85.18,83.66,118.65,118.65,0,0,0,80,119.17c0,18.74,3.77,34,9.11,46.28A123.59,123.59,0,0,1,69.57,140C51.55,108.62,55.3,84,59.14,72.14Zm3,103.35C35.47,159.57,26.82,140.05,24,129.7a59.82,59.82,0,0,1,22.5-1.17,129.08,129.08,0,0,0,9.15,19.41,142.28,142.28,0,0,0,34,39.56A114.92,114.92,0,0,1,62.1,175.49ZM128,190.4c-9.33-6.94-32-28.23-32-71.23C96,76.7,118.38,55.24,128,48c9.62,7.26,32,28.72,32,71.19C160,162.17,137.33,183.46,128,190.4ZM170.82,83.66A70.43,70.43,0,0,1,196.63,72a.2.2,0,0,1,.23.15C200.7,84,204.45,108.62,186.43,140a123.32,123.32,0,0,1-19.54,25.48c5.34-12.26,9.11-27.54,9.11-46.28A118.65,118.65,0,0,0,170.82,83.66ZM232,129.72c-2.77,10.25-11.4,29.81-38.09,45.77a114.92,114.92,0,0,1-27.55,12,142.28,142.28,0,0,0,34-39.56,129.08,129.08,0,0,0,9.15-19.41A59.69,59.69,0,0,1,232,129.71Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol><symbol id="i-telegram-logo" viewBox="0 0 256 256"><path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-certificate" viewBox="0 0 256 256"><path d="M128,136a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16h48A8,8,0,0,1,128,136Zm-8-40H72a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm112,65.47V224A8,8,0,0,1,220,231l-24-13.74L172,231A8,8,0,0,1,160,224V200H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216a16,16,0,0,1,16,16V86.53a51.88,51.88,0,0,1,0,74.94ZM160,184V161.47A52,52,0,0,1,216,76V56H40V184Zm56-12a51.88,51.88,0,0,1-40,0v38.22l16-9.16a8,8,0,0,1,7.94,0l16,9.16Zm16-48a36,36,0,1,0-36,36A36,36,0,0,0,232,124Z"/></symbol><symbol id="i-monitor-play" viewBox="0 0 256 256"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Zm-3.56-110.66-48-32A8,8,0,0,0,104,88v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,137.05V103l25.58,17Z"/></symbol><symbol id="i-speaker-high" viewBox="0 0 256 256"><path d="M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,207.64,88,164.09V91.91l56-43.55Zm54-106.08a40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.58,24,24,0,0,0,0-31.72,8,8,0,0,1,12-10.58ZM248,128a79.9,79.9,0,0,1-20.37,53.34,8,8,0,0,1-11.92-10.67,64,64,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67A79.83,79.83,0,0,1,248,128Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-hourglass-medium" viewBox="0 0 256 256"><path d="M200,75.64V40a16,16,0,0,0-16-16H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64ZM72,40H184V75.64L178.23,80H77.33L72,76Zm56,78L98.67,96h58.4Zm56,98H72V180l48-36v24a8,8,0,0,0,16,0V144.08l48,36.28Z"/></symbol><symbol id="i-globe-hemisphere-east" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a87.5,87.5,0,0,1,48,14.28V74L153.83,99.74,122.36,104l-.31-.22L102.38,90.92A16,16,0,0,0,79.87,95.1L58.93,126.4a16,16,0,0,0-2.7,8.81L56,171.44l-3.27,2.15A88,88,0,0,1,128,40ZM62.29,186.47l2.52-1.65A16,16,0,0,0,72,171.53l.21-36.23L93.17,104a3.62,3.62,0,0,0,.32.22l19.67,12.87a15.94,15.94,0,0,0,11.35,2.77L156,115.59a16,16,0,0,0,10-5.41l22.17-25.76A16,16,0,0,0,192,74V67.67A87.87,87.87,0,0,1,211.77,155l-16.14-14.76a16,16,0,0,0-16.93-3l-30.46,12.65a16.08,16.08,0,0,0-9.68,12.45l-2.39,16.19a16,16,0,0,0,11.77,17.81L169.4,202l2.36,2.37A87.88,87.88,0,0,1,62.29,186.47ZM185,195l-4.3-4.31a16,16,0,0,0-7.26-4.18L152,180.85l2.39-16.19L184.84,152,205,170.48A88.43,88.43,0,0,1,185,195Z"/></symbol><symbol id="i-play-fill" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></symbol><symbol id="i-pause-fill" viewBox="0 0 256 256"><path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"/></symbol><symbol id="i-quotes" viewBox="0 0 256 256"><path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"/></symbol><symbol id="i-arrow-down" viewBox="0 0 256 256"><path d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-play-circle" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z"/></symbol><symbol id="i-brain" viewBox="0 0 256 256"><path d="M248,124a56.11,56.11,0,0,0-32-50.61V72a48,48,0,0,0-88-26.49A48,48,0,0,0,40,72v1.39a56,56,0,0,0,0,101.2V176a48,48,0,0,0,88,26.49A48,48,0,0,0,216,176v-1.41A56.09,56.09,0,0,0,248,124ZM88,208a32,32,0,0,1-31.81-28.56A55.87,55.87,0,0,0,64,180h8a8,8,0,0,0,0-16H64A40,40,0,0,1,50.67,86.27,8,8,0,0,0,56,78.73V72a32,32,0,0,1,64,0v68.26A47.8,47.8,0,0,0,88,128a8,8,0,0,0,0,16,32,32,0,0,1,0,64Zm104-44h-8a8,8,0,0,0,0,16h8a55.87,55.87,0,0,0,7.81-.56A32,32,0,1,1,168,144a8,8,0,0,0,0-16,47.8,47.8,0,0,0-32,12.26V72a32,32,0,0,1,64,0v6.73a8,8,0,0,0,5.33,7.54A40,40,0,0,1,192,164Zm16-52a8,8,0,0,1-8,8h-4a36,36,0,0,1-36-36V80a8,8,0,0,1,16,0v4a20,20,0,0,0,20,20h4A8,8,0,0,1,208,112ZM60,120H56a8,8,0,0,1,0-16h4A20,20,0,0,0,80,84V80a8,8,0,0,1,16,0v4A36,36,0,0,1,60,120Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-lightbulb" viewBox="0 0 256 256"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"/></symbol></svg>
 
 <a class="skip" href="#asosiy">Asosiy qismga o‘tish</a>
 
@@ -510,9 +502,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
     <span class="body-4">Global Trainings</span>
   </a>
   <nav class="nav-links title-4" aria-label="Bo‘limlar">
+    <a href="#kurs">Kurs haqida</a>
     <a href="#dastur">Dastur</a>
     <a href="#ustoz">Ustoz</a>
-    <a href="#videolar">Videolar</a>
     <a href="#savollar">Savollar</a>
   </nav>
   <a class="btn btn-primary button-sm nav-cta" href="#yozilish">Bepul darsga yozilish</a>
@@ -521,9 +513,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Mobil menyu" class="heading-3">
-    <a href="#dastur" style="--i:0"><small>01</small>Dastur</a>
-    <a href="#ustoz" style="--i:1"><small>02</small>Ustoz</a>
-    <a href="#videolar" style="--i:2"><small>03</small>Videolar</a>
+    <a href="#kurs" style="--i:0"><small>01</small>Kurs haqida</a>
+    <a href="#dastur" style="--i:1"><small>02</small>Dastur</a>
+    <a href="#ustoz" style="--i:2"><small>03</small>Ustoz</a>
     <a href="#savollar" style="--i:3"><small>04</small>Savollar</a>
   </nav>
   <div class="menu-foot" style="--i:5">
@@ -545,16 +537,16 @@ html.modal-open,html.modal-open body{overflow:hidden}
           <span class="hl" aria-hidden="true"><span>trener bo‘lib</span></span>
           <span class="hl" aria-hidden="true"><span>yetishing</span></span>
         </h1>
-        <p class="hero-sub body-3 md-body-7 hx">Dilshod Mannopov bilan 5 oylik amaliy kurs. Mijoz bilan ishlash, tranzakt analiz, notiqlik va o‘z treningingizni tuzishni o‘rganasiz.</p>
+        <p class="hero-sub body-3 md-body-7 hx">Dilshod Mannopov bilan 3 oylik amaliy kurs, darslar haftada 2 marta. Mijoz bilan ishlash, tranzakt analiz, notiqlik va o‘z treningingizni tuzishni o‘rganasiz.</p>
         <div class="hero-ctas hx">
           <a class="btn btn-primary btn-lg button-md magnetic" id="hero-cta" href="#yozilish">Bepul darsga yozilish <span class="arrow"><svg class="icon icon-sm"><use href="#i-arrow-right"/></svg></span></a>
-          <button class="textlink button-sm" type="button" data-open="0"><span class="pc"><svg class="icon icon-sm"><use href="#i-play-fill"/></svg></span>Treylerni ko‘rish · 1:15</button>
+          <button class="textlink button-sm" type="button" data-open="0" data-cursor="Ko‘rish"><span class="pc"><svg class="icon icon-sm"><use href="#i-play-fill"/></svg></span>Kurs haqida video · 3:18</button>
         </div>
       </div>
       <dl class="meta hx">
         <div><dt class="label">Sana</dt><dd class="body-2">12-noyabr, 15:00</dd></div>
         <div><dt class="label">Joy</dt><dd class="body-2">Chilonzor, Toshkent</dd></div>
-        <div><dt class="label">Davomiyligi</dt><dd class="body-2">5 oy</dd></div>
+        <div><dt class="label">Davomiyligi</dt><dd class="body-2">3 oy, haftada 2 marta</dd></div>
         <div><dt class="label">Format</dt><dd class="body-2">Onlayn yoki oflayn</dd></div>
       </dl>
     </div>
@@ -574,7 +566,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
           </div>
         </div>
         <p class="cd-over body-6" hidden>Bu tanishtiruv kuni o‘tdi. Keyingi oqim haqida +998 90 005 00 19 dan so‘rang.</p>
-        <button class="btn btn-light button-sm" type="button" data-open="1" data-cursor="Ko‘rish"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</button>
+        <button class="btn btn-light button-sm" type="button" data-open="0" data-cursor="Ko‘rish"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</button>
       </div>
     </div>
   </div>
@@ -591,6 +583,120 @@ html.modal-open,html.modal-open body{overflow:hidden}
         <span>Guruh dinamikasi</span><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>
         <span>Ong osti bilan ishlash</span><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE VIDEO -->
+<section class="section" id="kurs">
+  <div class="wrap kurs">
+    <button class="kvid" id="kvid" type="button" data-open="0" data-cursor="Ko‘rish" aria-label="Kurs haqidagi videoni ovoz bilan ko‘rish, 3 daqiqa 18 soniya">
+      <img src="media/main.jpg" alt="" loading="lazy" width="720" height="1280">
+      <span class="kv-top"><span class="pill caption-4"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</span><span class="kv-dur caption-4 num">3:18</span></span>
+      <span class="tplay"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></span>
+      <span class="kv-cap"><span class="title-2">Kurs haqida ustozdan</span><span class="caption-5 muted">Dilshod Mannopov · 3 daqiqa</span></span>
+    </button>
+    <div class="kurs-text">
+      <div class="head" data-reveal>
+        <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Kurs haqida</span>
+        <h2 class="heading-3 md-heading-2">Psixolog bo‘lish shunchaki sertifikat emas</h2>
+        <p class="body-3 md-body-7">Kurs chuqur, tizimli va intensiv tuzilgan. Maqsad faqat bilim berish emas, sizni real ishlashga tayyorlash.</p>
+      </div>
+      <ol class="pillars">
+        <li data-reveal><span class="pi"><svg class="icon icon-lg"><use href="#i-chats-circle"/></svg></span><span class="title-2">Konsultatsiya olib borishning ilmiy texnologiyalari</span></li>
+        <li data-reveal><span class="pi"><svg class="icon icon-lg"><use href="#i-brain"/></svg></span><span class="title-2">Ong osti bilan ishlash mexanizmlari</span></li>
+        <li data-reveal><span class="pi"><svg class="icon icon-lg"><use href="#i-shield-check"/></svg></span><span class="title-2">Mijoz bilan xavfsiz va professional ishlash</span></li>
+        <li data-reveal><span class="pi"><svg class="icon icon-lg"><use href="#i-lightbulb"/></svg></span><span class="title-2">Psixolog va trener sifatida fikrlash modeli</span></li>
+      </ol>
+      <div class="kurs-foot" data-reveal>
+        <a class="btn btn-primary btn-lg button-md magnetic" href="#yozilish">Bepul darsga yozilish <span class="arrow"><svg class="icon icon-sm"><use href="#i-arrow-right"/></svg></span></a>
+        <span class="kf-meta body-5 muted"><svg class="icon icon-sm"><use href="#i-clock"/></svg>3 oy · haftada 2 marta · onlayn yoki oflayn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:0" aria-label="Kurs raqamlarda">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat" data-reveal><b><span class="n" data-count="3">3</span><span class="u">oy</span></b><p class="body-6">kurs davomiyligi</p></div>
+      <div class="stat" data-reveal><b><span class="n" data-count="2">2</span><span class="u">marta</span></b><p class="body-6">haftada dars</p></div>
+      <div class="stat" data-reveal><b><span class="n" data-count="4">4</span><span class="u">modul</span></b><p class="body-6">dastur bo‘limlari</p></div>
+      <div class="stat" data-reveal><b><span class="n" data-count="12">12</span><span class="u">mavzu</span></b><p class="body-6">dasturdagi mavzular</p></div>
+      <div class="stat wide" data-reveal><b><span class="n" data-count="1">1</span><span class="u">kun</span></b><p class="body-6">bepul tanishtiruv, 12-noyabr</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="section program" id="dastur" style="padding-top:0">
+  <div class="wrap">
+    <div class="head-row program-head">
+      <div class="head" data-reveal>
+        <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Dastur</span>
+        <h2 class="heading-3 md-heading-2 xl-heading-1">3 oyda nimalarni o‘rganasiz</h2>
+      </div>
+      <p class="body-3 muted" data-reveal style="max-width:380px">4 modul, 12 mavzu. Darslar haftada 2 marta, onlayn yoki oflayn qatnashasiz.</p>
+    </div>
+    <div class="mgrid">
+      <article class="mcard" data-reveal>
+        <img src="media/m1.jpg" alt="" loading="lazy">
+        <div class="mc-top"><span class="mc-num">01</span><span class="pill caption-4">3 ta mavzu</span></div>
+        <div class="mc-body">
+          <h3 class="heading-4 md-heading-3"><span class="label mc-lab">1-modul</span>Mijoz bilan ishlash texnologiyalari</h3>
+          <ul class="mc-topics body-3">
+            <li><span class="tn body-4 num">01</span><span>Konsultatsiya o‘tkazish qoidalari va samarali metodlar</span></li>
+            <li><span class="tn body-4 num">02</span><span>Ong va ong osti bilan ishlash texnologiyalari</span></li>
+            <li><span class="tn body-4 num">03</span><span>Mijoz muammolariga yengil yechim topish usullari</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="mcard" data-reveal>
+        <img src="media/m2.jpg" alt="" loading="lazy">
+        <div class="mc-top"><span class="mc-num">02</span><span class="pill caption-4">3 ta mavzu</span></div>
+        <div class="mc-body">
+          <h3 class="heading-4 md-heading-3"><span class="label mc-lab">2-modul</span>Psixologiyaning nazariy asoslari</h3>
+          <ul class="mc-topics body-3">
+            <li><span class="tn body-4 num">04</span><span>Tranzakt analiz asoslari</span></li>
+            <li><span class="tn body-4 num">05</span><span>Guruhdagi dinamik jarayonlarni boshqarish</span></li>
+            <li><span class="tn body-4 num">06</span><span>Psixosintez asoslari</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="mcard" data-reveal>
+        <img src="media/m3.jpg" alt="" loading="lazy">
+        <div class="mc-top"><span class="mc-num">03</span><span class="pill caption-4">4 ta mavzu</span></div>
+        <div class="mc-body">
+          <h3 class="heading-4 md-heading-3"><span class="label mc-lab">3-modul</span>Shaxsiy va kasbiy rivojlanish</h3>
+          <ul class="mc-topics body-3">
+            <li><span class="tn body-4 num">07</span><span>Notiqlik mahorati</span></li>
+            <li><span class="tn body-4 num">08</span><span>Treninglar uchun dastur tuzish usullari</span></li>
+            <li><span class="tn body-4 num">09</span><span>NLP texnologiyalaridan ekologik foydalanish</span></li>
+            <li><span class="tn body-4 num">10</span><span>Intuitiv va emotsional intellektni rivojlantirish</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="mcard" data-reveal>
+        <img src="media/m4.jpg" alt="" loading="lazy">
+        <div class="mc-top"><span class="mc-num">04</span><span class="pill caption-4">2 ta mavzu</span></div>
+        <div class="mc-body">
+          <h3 class="heading-4 md-heading-3"><span class="label mc-lab">4-modul</span>Psixotexnologiya va meditatsiya</h3>
+          <ul class="mc-topics body-3">
+            <li><span class="tn body-4 num">11</span><span>Meditativ texnikalar va ularning samaradorligi</span></li>
+            <li><span class="tn body-4 num">12</span><span>SOS (ongni chetlab o‘tish tizimi) bo‘yicha ishlash</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="mcard end" data-reveal>
+        <svg class="big-cres" viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>
+        <div class="mc-body">
+          <span class="label" style="color:rgba(255,255,255,.8)">Har bir modulda</span>
+          <h3 class="heading-4 md-heading-3">Alohida professional psixolog bilan shaxsiy ish</h3>
+          <p class="body-3">Ustozning qoidasiga ko‘ra, psixolog trenerning ichki va tashqi olami muvozanatda bo‘lishi lozim. Kursda sertifikatga ega bo‘lish imkoniyati ham bor.</p>
+        </div>
+        <a class="btn btn-light btn-lg button-md magnetic" href="#yozilish">Bepul darsga yozilish <span class="arrow"><svg class="icon icon-sm"><use href="#i-arrow-right"/></svg></span></a>
+      </article>
     </div>
   </div>
 </section>
@@ -620,112 +726,20 @@ html.modal-open,html.modal-open body{overflow:hidden}
   </div>
 </section>
 
-<!-- STATS -->
-<section class="section" style="padding-top:0" aria-label="Kurs raqamlarda">
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat" data-reveal><b><span class="n" data-count="5">5</span><span class="u">oy</span></b><p class="body-6">kurs davomiyligi</p></div>
-      <div class="stat" data-reveal><b><span class="n" data-count="3">3</span><span class="u">marta</span></b><p class="body-6">haftada dars</p></div>
-      <div class="stat" data-reveal><b><span class="n" data-count="4">4</span><span class="u">modul</span></b><p class="body-6">dastur bo‘limlari</p></div>
-      <div class="stat" data-reveal><b><span class="n" data-count="12">12</span><span class="u">mavzu</span></b><p class="body-6">dasturdagi mavzular</p></div>
-      <div class="stat wide" data-reveal><b><span class="n" data-count="1">1</span><span class="u">kun</span></b><p class="body-6">bepul tanishtiruv, 12-noyabr</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAM -->
-<section class="program" id="dastur">
-  <div class="program-pin" id="program-pin">
-    <div class="wrap program-head">
-      <div class="head-row">
-        <div class="head" data-reveal>
-          <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Dastur</span>
-          <h2 class="heading-3 md-heading-2 xl-heading-1">To‘rt modul. Besh oy.<br> Bitta kasb.</h2>
-        </div>
-        <p class="body-3 muted" data-reveal style="max-width:360px">Haftada 3 marta dars. Amaliy natijalar bilan ishlanadi.</p>
-      </div>
-    </div>
-    <div class="track" id="track">
-      <article class="mcard">
-        <img src="media/m1.jpg" alt="" loading="lazy">
-        <div class="mc-top"><span class="mc-num">01</span><span class="pill caption-4">3 ta mavzu</span></div>
-        <div class="mc-body">
-          <h3 class="heading-4 md-heading-3"><span class="label" style="display:block;margin-bottom:var(--s-100);color:var(--accent-ink)">1-modul</span>Mijoz bilan ishlash texnologiyalari</h3>
-          <ul class="mc-topics body-3">
-            <li><svg class="icon"><use href="#i-check"/></svg>Konsultatsiya o‘tkazish qoidalari va samarali metodlar</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Ong va ong osti bilan ishlash texnologiyalari</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Mijoz muammolariga yengil yechim topish usullari</li>
-          </ul>
-        </div>
-      </article>
-      <article class="mcard">
-        <img src="media/m2.jpg" alt="" loading="lazy">
-        <div class="mc-top"><span class="mc-num">02</span><span class="pill caption-4">3 ta mavzu</span></div>
-        <div class="mc-body">
-          <h3 class="heading-4 md-heading-3"><span class="label" style="display:block;margin-bottom:var(--s-100);color:var(--accent-ink)">2-modul</span>Psixologiyaning nazariy asoslari</h3>
-          <ul class="mc-topics body-3">
-            <li><svg class="icon"><use href="#i-check"/></svg>Tranzakt analiz asoslari</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Guruhdagi dinamik jarayonlarni boshqarish</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Psixosintez asoslari</li>
-          </ul>
-        </div>
-      </article>
-      <article class="mcard">
-        <img src="media/m3.jpg" alt="" loading="lazy">
-        <div class="mc-top"><span class="mc-num">03</span><span class="pill caption-4">4 ta mavzu</span></div>
-        <div class="mc-body">
-          <h3 class="heading-4 md-heading-3"><span class="label" style="display:block;margin-bottom:var(--s-100);color:var(--accent-ink)">3-modul</span>Shaxsiy va kasbiy rivojlanish</h3>
-          <ul class="mc-topics body-3">
-            <li><svg class="icon"><use href="#i-check"/></svg>Notiqlik mahorati</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Treninglar uchun dastur tuzish usullari</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>NLP texnologiyalaridan ekologik foydalanish</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Intuitiv va emotsional intellektni rivojlantirish</li>
-          </ul>
-        </div>
-      </article>
-      <article class="mcard">
-        <img src="media/m4.jpg" alt="" loading="lazy">
-        <div class="mc-top"><span class="mc-num">04</span><span class="pill caption-4">2 ta mavzu</span></div>
-        <div class="mc-body">
-          <h3 class="heading-4 md-heading-3"><span class="label" style="display:block;margin-bottom:var(--s-100);color:var(--accent-ink)">4-modul</span>Psixotexnologiya va meditatsiya</h3>
-          <ul class="mc-topics body-3">
-            <li><svg class="icon"><use href="#i-check"/></svg>Meditativ texnikalar va ularning samaradorligi</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>SOS (ongni chetlab o‘tish tizimi) bo‘yicha ishlash</li>
-          </ul>
-        </div>
-      </article>
-      <article class="mcard end">
-        <svg class="big-cres" viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>
-        <span class="label" style="color:rgba(255,255,255,.8)">Har bir modulda</span>
-        <div class="mc-body">
-          <h3 class="heading-4 md-heading-3">Alohida professional psixolog bilan shaxsiy ish</h3>
-          <p class="body-3">Ustozning qoidasiga ko‘ra, psixolog trenerning ichki va tashqi olami muvozanatda bo‘lishi lozim. Kursda sertifikatga ega bo‘lish imkoniyati ham bor.</p>
-          <a class="btn btn-light btn-lg button-md magnetic" href="#yozilish" style="justify-self:start">Bepul darsga yozilish <span class="arrow"><svg class="icon icon-sm"><use href="#i-arrow-right"/></svg></span></a>
-        </div>
-      </article>
-    </div>
-    <div class="wrap"><div class="hprog" aria-hidden="true"><i id="hprog"></i></div></div>
-  </div>
-</section>
-
-<!-- TRAILER + BIO -->
+<!-- TEACHER -->
 <section class="section" id="ustoz">
   <div class="wrap">
-    <div class="trailer-head" data-reveal>
-      <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Ustoz</span>
-      <h2 class="heading-3 md-heading-1 xl-display-2">Ustoz bilan tanishing</h2>
-    </div>
-    <button class="tcard" id="tcard" type="button" data-open="3" data-cursor="Ko‘rish" aria-label="Zaldagi suhbat videosini ovoz bilan ko‘rish, 6 daqiqa 41 soniya">
-      <video id="trailer-video" muted loop playsinline preload="none" poster="media/trailer.jpg"><source src="media/trailer.mp4" type="video/mp4"></video>
-      <span class="tplay"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></span>
-      <span class="tcap"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg><span class="body-5">Zaldagi suhbat</span><span class="caption-4 muted num">6:41</span></span>
-    </button>
-
     <div class="bio">
-      <figure class="portrait" data-reveal><img id="portrait-img" src="media/portrait.jpg" alt="Dilshod Mannopov" loading="lazy"></figure>
+      <button class="kvid" type="button" data-open="1" data-cursor="Ko‘rish" aria-label="Ustozning «Professional psixolog» videosini ovoz bilan ko‘rish, 1 daqiqa 15 soniya">
+        <img src="media/v1.jpg" alt="" loading="lazy" width="464" height="824">
+        <span class="kv-top"><span class="pill caption-4"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg>Ovoz bilan</span><span class="kv-dur caption-4 num">1:15</span></span>
+        <span class="tplay"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></span>
+        <span class="kv-cap"><span class="title-2">Professional psixolog</span><span class="caption-5 muted">Dilshod Mannopov · 1 daqiqa</span></span>
+      </button>
       <div class="bio-text" data-reveal>
+        <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Ustoz bilan tanishing</span>
+        <h2 class="heading-3 md-heading-1">Dilshod Mannopov</h2>
         <span class="label">Psixolog trener</span>
-        <h3 class="heading-3 md-heading-1">Dilshod Mannopov</h3>
         <p class="body-3 md-body-7">Ilmiy to‘g‘ri yondashib, boshqalarga zarar yetkazmasdan yordam bera oladigan, oilasi va atrofiga foydasi tegadigan trener bo‘lishni istaganlar bilan shaxsiy bilimlarini va ustozlaridan o‘rgangan saboqlarini o‘rtoqlashadi.</p>
         <figure class="quote">
           <svg class="icon icon-xl"><use href="#i-quotes"/></svg>
@@ -733,32 +747,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
           <figcaption class="who"><img src="media/avatar.jpg" alt="" width="48" height="48" loading="lazy"><div><span class="body-4">Dilshod Mannopov</span><span class="caption-5 muted">Ustozning qoidasi</span></div></figcaption>
         </figure>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO LIBRARY -->
-<section class="section" id="videolar" style="padding-top:0">
-  <div class="wrap">
-    <div class="head-row" data-reveal>
-      <div class="head">
-        <span class="eyebrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>Videolar</span>
-        <h2 class="heading-3 md-heading-2">Ustozning videolari</h2>
-        <p class="body-3">5 ta video, jami 20 daqiqadan ortiq. Kursorni olib boring, video jonlanadi.</p>
-      </div>
-      <div class="rail-ctrls">
-        <button class="btn btn-ghost btn-icon" type="button" id="rail-prev" aria-label="Oldingi videolar" disabled><svg class="icon"><use href="#i-caret-left"/></svg></button>
-        <button class="btn btn-ghost btn-icon" type="button" id="rail-next" aria-label="Keyingi videolar"><svg class="icon"><use href="#i-caret-right"/></svg></button>
-      </div>
-    </div>
-  </div>
-  <div class="rail-wrap">
-    <div class="rail" id="rail" aria-label="Videolar ro‘yxati">
-      <button class="vcard" type="button" data-open="0" data-cursor="Ko‘rish"><span class="vmedia"><span class="sk"></span><img src="media/v1.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="media/v1.mp4"></video><span class="vdur caption-4">1:15</span><span class="vplay"><svg class="icon"><use href="#i-play-fill"/></svg></span></span><span class="vcap"><span class="title-3">Psixolog trenerlar uchun</span><span class="caption-5 muted">Kurs haqida qisqacha</span></span></button>
-      <button class="vcard" type="button" data-open="1" data-cursor="Ko‘rish"><span class="vmedia"><span class="sk"></span><img src="media/v2.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="media/v2.mp4"></video><span class="vdur caption-4">3:18</span><span class="vplay"><svg class="icon"><use href="#i-play-fill"/></svg></span></span><span class="vcap"><span class="title-3">Kutubxonadagi suhbat</span><span class="caption-5 muted">Dilshod Mannopov</span></span></button>
-      <button class="vcard" type="button" data-open="2" data-cursor="Ko‘rish"><span class="vmedia"><span class="sk"></span><img src="media/v3.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="media/v3.mp4"></video><span class="vdur caption-4">6:39</span><span class="vplay"><svg class="icon"><use href="#i-play-fill"/></svg></span></span><span class="vcap"><span class="title-3">Studiyadagi suhbat</span><span class="caption-5 muted">Dilshod Mannopov</span></span></button>
-      <button class="vcard" type="button" data-open="3" data-cursor="Ko‘rish"><span class="vmedia"><span class="sk"></span><img src="media/v4.jpg" alt="" loading="lazy" style="object-position:58% 50%"><video muted loop playsinline preload="none" data-src="media/v4.mp4" style="object-position:58% 50%"></video><span class="vdur caption-4">6:41</span><span class="vplay"><svg class="icon"><use href="#i-play-fill"/></svg></span></span><span class="vcap"><span class="title-3">Zaldagi suhbat</span><span class="caption-5 muted">Dilshod Mannopov</span></span></button>
-      <button class="vcard" type="button" data-open="4" data-cursor="Ko‘rish"><span class="vmedia"><span class="sk"></span><img src="media/v5.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" data-src="media/v5.mp4"></video><span class="vdur caption-4">2:52</span><span class="vplay"><svg class="icon"><use href="#i-play-fill"/></svg></span></span><span class="vcap"><span class="title-3">Ustozning fikri</span><span class="caption-5 muted">Dilshod Mannopov</span></span></button>
     </div>
   </div>
 </section>
@@ -795,7 +783,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <span class="steps-line" aria-hidden="true"><i id="steps-fill"></i></span>
       <li class="step" data-reveal><span class="step-dot body-4">1</span><div class="step-body"><span class="label">Bugun</span><h3 class="title-1">Yoziling</h3><p class="body-3">Ism va raqamingizni qoldiring yoki +998 90 005 00 19 raqamiga qo‘ng‘iroq qiling.</p></div></li>
       <li class="step free" data-reveal><span class="step-dot body-4">2</span><div class="step-body"><span class="label" style="color:var(--accent-ink)">12-noyabr, 15:00 · bepul</span><h3 class="title-1">Tanishtiruv kuniga keling</h3><p class="body-3">Toshkent, Chilonzor, 11-a uy. Mo‘ljal: Kohinur «Korzinka» ro‘parasi.</p><a class="link body-4" href="https://yandex.uz/maps/?text=Korzinka%20Kohinur%20Chilonzor%20Toshkent" target="_blank" rel="noopener" style="justify-self:start">Xaritada ochish <svg class="icon icon-sm"><use href="#i-arrow-up-right"/></svg></a></div></li>
-      <li class="step" data-reveal><span class="step-dot body-4">3</span><div class="step-body"><span class="label">5 oy</span><h3 class="title-1">Kursni boshlang</h3><p class="body-3">Ma’qul kelsa, kursga qo‘shilasiz. Darslar haftada 3 marta, onlayn yoki oflayn.</p></div></li>
+      <li class="step" data-reveal><span class="step-dot body-4">3</span><div class="step-body"><span class="label">3 oy</span><h3 class="title-1">Kursni boshlang</h3><p class="body-3">Ma’qul kelsa, kursga qo‘shilasiz. Darslar haftada 2 marta, onlayn yoki oflayn.</p></div></li>
     </ol>
   </div>
 </section>
@@ -815,7 +803,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
     </div>
     <div class="faq" data-reveal>
       <details><summary class="title-2">Birinchi kun rostdan ham bepulmi?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">Ha. 12-noyabr soat 15:00 dagi tanishtiruv kuni bepul. Unda kurs va ustoz bilan tanishasiz, keyin qaror qilasiz.</p></details>
-      <details><summary class="title-2">Kurs qancha davom etadi?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">5 oy. Darslar haftada 3 marta bo‘ladi.</p></details>
+      <details><summary class="title-2">Kurs qancha davom etadi?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">3 oy. Darslar haftada 2 marta bo‘ladi.</p></details>
       <details><summary class="title-2">Onlayn qatnashsam bo‘ladimi?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">Ha, darslarda onlayn yoki oflayn qatnashish mumkin. Oflayn darslar Chilonzordagi o‘quv markazida o‘tadi.</p></details>
       <details><summary class="title-2">Sertifikat beriladimi?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">Kursda sertifikatga ega bo‘lish imkoniyati bor. Shartlarini tanishtiruv kunida yoki administratordan so‘rang.</p></details>
       <details><summary class="title-2">Kurs kimlar uchun?<span class="pc"><svg class="icon icon-sm"><use href="#i-plus"/></svg></span></summary><p class="ans body-3">Shaxsiy rivojlanishni istaganlar, trening o‘tkazishni o‘rganmoqchi bo‘lganlar va mijozlar bilan ishlashda professional darajaga chiqmoqchi bo‘lganlar uchun. O‘z holatingizni tanishtiruv kunida ustoz bilan gaplashib oling.</p></details>
@@ -984,7 +972,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Birinchi kun rostdan ham bepulmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. 12-noyabr soat 15:00 dagi tanishtiruv kuni bepul."}},
-{"@type":"Question","name":"Kurs qancha davom etadi?","acceptedAnswer":{"@type":"Answer","text":"5 oy. Darslar haftada 3 marta bo‘ladi."}},
+{"@type":"Question","name":"Kurs qancha davom etadi?","acceptedAnswer":{"@type":"Answer","text":"3 oy. Darslar haftada 2 marta bo‘ladi."}},
 {"@type":"Question","name":"Onlayn qatnashsam bo‘ladimi?","acceptedAnswer":{"@type":"Answer","text":"Ha, darslarda onlayn yoki oflayn qatnashish mumkin."}},
 {"@type":"Question","name":"Sertifikat beriladimi?","acceptedAnswer":{"@type":"Answer","text":"Kursda sertifikatga ega bo‘lish imkoniyati bor."}},
 {"@type":"Question","name":"Narxi qancha?","acceptedAnswer":{"@type":"Answer","text":"Narx va to‘lov shartlarini +998 90 005 00 19 raqami yoki Telegramdagi @Global_Admin19 orqali bilib oling."}}
@@ -1064,7 +1052,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
   var nav=$('#nav'), lastY=0;
   function onNav(y){nav.classList.toggle('scrolled',y>24);var hide=y>lastY&&y>600&&!menu.classList.contains('open');nav.classList.toggle('hide',hide);lastY=y}
   if(lenis){lenis.on('scroll',function(e){onNav(e.scroll)})}else{var nt=false;window.addEventListener('scroll',function(){if(!nt){nt=true;requestAnimationFrame(function(){nt=false;onNav(window.scrollY)})}},{passive:true})}
-  var links=$$('.nav-links a'), navFor={dastur:'dastur',ustoz:'ustoz',videolar:'videolar',mos:'videolar',qanday:'savollar',savollar:'savollar',top:'',tamoyil:'',yozilish:''};
+  var links=$$('.nav-links a'), navFor={kurs:'kurs',dastur:'dastur',ustoz:'ustoz',mos:'ustoz',qanday:'savollar',savollar:'savollar',top:'',tamoyil:'',yozilish:''};
   if('IntersectionObserver' in window){
     var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var id=navFor[e.target.id];links.forEach(function(a){if(id&&a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})},{rootMargin:'-45% 0px -50% 0px'});
     Object.keys(navFor).forEach(function(id){var s=document.getElementById(id);if(s)spy.observe(s)});
@@ -1093,11 +1081,8 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
   /* video player */
   var vids=[
-    {src:'media/v1.mp4',poster:'media/v1.jpg',title:'Psixolog trenerlar uchun',sub:'Kurs haqida qisqacha · 1:15'},
-    {src:'media/v2.mp4',poster:'media/v2.jpg',title:'Kutubxonadagi suhbat',sub:'Dilshod Mannopov · 3:18'},
-    {src:'media/v3.mp4',poster:'media/v3.jpg',title:'Studiyadagi suhbat',sub:'Dilshod Mannopov · 6:39'},
-    {src:'media/v4.mp4',poster:'media/v4.jpg',title:'Zaldagi suhbat',sub:'Dilshod Mannopov · 6:41',h:true},
-    {src:'media/v5.mp4',poster:'media/v5.jpg',title:'Ustozning fikri',sub:'Dilshod Mannopov · 2:52'}
+    {src:'media/main.mp4',poster:'media/main.jpg',title:'Kurs haqida ustozdan',sub:'Dilshod Mannopov · 3:18'},
+    {src:'media/v1.mp4',poster:'media/v1.jpg',title:'Professional psixolog',sub:'Dilshod Mannopov · 1:15'}
   ];
   var dlg=$('#player'), pv=$('#pv'), pvErr=$('#pv-err'), cur=0, heroV=$('#hero-video'), opener=null;
   function load(i){
@@ -1108,7 +1093,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
   }
   pv.addEventListener('error',function(){if(pv.getAttribute('src')){pv.hidden=true;pvErr.hidden=false}});
   function openPlayer(i,from){
-    opener=from||null;if(heroLive)heroV.pause();tv.pause();if(lenis)lenis.stop();
+    opener=from||null;if(heroLive)heroV.pause();if(lenis)lenis.stop();
     playerOpen=true;root.classList.add('modal-open');tgUI();hap('tap');
     if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
     requestAnimationFrame(function(){dlg.classList.add('in')});load(i);
@@ -1124,33 +1109,10 @@ html.modal-open,html.modal-open body{overflow:hidden}
   $('#pv-close').addEventListener('click',function(){dlg.close()});
   $('#pv-prev').addEventListener('click',function(){load(cur-1)});
   $('#pv-next').addEventListener('click',function(){load(cur+1)});
-  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(){if(rail.classList.contains('was-drag'))return;openPlayer(+b.getAttribute('data-open'),b)})});
+  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(){openPlayer(+b.getAttribute('data-open'),b)})});
   /* hero loop only on desktop with a mouse; phones and Telegram get the still image */
-  var heroLive=false, tv=$('#trailer-video');
+  var heroLive=false;
   if(heroV&&!lite&&!reduce){heroV.hidden=false;heroV.src=heroV.getAttribute('data-src');var hp=heroV.play();heroLive=true;root.classList.add('hero-live');if(hp&&hp.catch)hp.catch(function(){heroV.hidden=true;heroLive=false;root.classList.remove('hero-live')})}
-
-  /* video rail: drag, buttons, hover previews */
-  var rail=$('#rail'), prev=$('#rail-prev'), next=$('#rail-next');
-  $$('.vmedia img').forEach(function(img){var done=function(){var sk=img.previousElementSibling;if(sk&&sk.classList.contains('sk'))sk.remove()};if(img.complete&&img.naturalWidth)done();else{img.addEventListener('load',done);img.addEventListener('error',done)}});
-  function stepW(){var c=rail.querySelector('.vcard');return c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(rail).columnGap||16):260}
-  function railState(){prev.disabled=rail.scrollLeft<4;next.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4}
-  prev.addEventListener('click',function(){rail.scrollBy({left:-stepW()*2,behavior:reduce?'auto':'smooth'})});
-  next.addEventListener('click',function(){rail.scrollBy({left:stepW()*2,behavior:reduce?'auto':'smooth'})});
-  var rt=false;rail.addEventListener('scroll',function(){if(!rt){rt=true;requestAnimationFrame(function(){rt=false;railState()})}},{passive:true});
-  window.addEventListener('resize',railState);railState();
-  (function(){
-    var down=false,sx=0,sl=0,moved=0;
-    rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0)return;down=true;sx=e.clientX;sl=rail.scrollLeft;moved=0});
-    window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;moved=Math.max(moved,Math.abs(dx));if(moved>6){rail.classList.add('dragging');rail.scrollLeft=sl-dx}});
-    window.addEventListener('pointerup',function(){if(!down)return;down=false;if(moved>6){rail.classList.add('was-drag');setTimeout(function(){rail.classList.remove('was-drag')},60)}rail.classList.remove('dragging')});
-  })();
-  if(fine&&!reduce&&!lite){
-    $$('.vcard').forEach(function(c){
-      var v=$('video',c);
-      c.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;if(!v.src)v.src=v.getAttribute('data-src');try{v.currentTime=0}catch(_){}var p=v.play();c.classList.add('previewing');if(p&&p.catch)p.catch(function(){c.classList.remove('previewing')})});
-      c.addEventListener('pointerleave',function(){v.pause();c.classList.remove('previewing')});
-    });
-  }
 
   /* fit check */
   var fits=$$('.fit-row'), meter=$$('.meter i'), fitText=$('#fit-text'), fitLink=$('#fit-link');
@@ -1254,13 +1216,8 @@ html.modal-open,html.modal-open body{overflow:hidden}
     new IntersectionObserver(function(es){finIn=es[0].isIntersecting;dockState()},{rootMargin:'0px 0px -15% 0px'}).observe(fin);
   }
 
-  /* trailer preview plays only while visible */
-  if('IntersectionObserver' in window&&!reduce&&!lite){
-    new IntersectionObserver(function(es){if(es[0].isIntersecting){var p=tv.play();if(p&&p.catch)p.catch(function(){})}else tv.pause()},{threshold:.25}).observe(tv);
-  }
-
   /* pause every video when the page or the Mini App goes to the background */
-  function pauseAll(){pv.pause();tv.pause();if(heroLive)heroV.pause()}
+  function pauseAll(){pv.pause();if(heroLive)heroV.pause()}
   document.addEventListener('visibilitychange',function(){if(document.hidden)pauseAll();else if(heroLive&&!playerOpen){var p=heroV.play();if(p&&p.catch)p.catch(function(){})}});
 
   /* Telegram Mini App */
@@ -1349,19 +1306,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
     ST.create({trigger:tag,start:'top 75%',end:'bottom 35%',scrub:true,onUpdate:function(s){setWords(s.progress);setRing(s.progress)}});
   });
 
-  /* program: horizontal pinned gallery on desktop */
-  mm.add('(min-width: 1024px)',function(){
-    var sec=$('#dastur'), track=$('#track'); sec.classList.add('is-h');
-    var dist=function(){return Math.max(0,track.scrollWidth-window.innerWidth)};
-    var tw=G.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'#program-pin',start:'top top',end:function(){return '+='+dist()},pin:true,scrub:1,invalidateOnRefresh:true,onUpdate:function(s){G.set('#hprog',{scaleX:s.progress})}}});
-    $$('.mcard > img',track).forEach(function(img){G.fromTo(img,{xPercent:-3},{xPercent:3,ease:'none',scrollTrigger:{trigger:img.parentNode,containerAnimation:tw,start:'left right',end:'right left',scrub:true}})});
-    return function(){sec.classList.remove('is-h');G.set(track,{clearProps:'x'})};
-  });
-
-  /* trailer card grows to full width */
-  G.fromTo('#tcard',{scale:.78},{scale:1,ease:'none',scrollTrigger:{trigger:'#tcard',start:'top bottom',end:'center 55%',scrub:true}});
-  /* portrait parallax */
-  G.fromTo('#portrait-img',{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:'.portrait',start:'top bottom',end:'bottom top',scrub:true}});
+  /* main video card settles in; program images drift */
+  G.fromTo('#kvid',{scale:.92},{scale:1,ease:'none',scrollTrigger:{trigger:'#kvid',start:'top bottom',end:'center 60%',scrub:true}});
+  $$('.mcard > img').forEach(function(img){G.fromTo(img,{yPercent:-4},{yPercent:4,ease:'none',scrollTrigger:{trigger:img.parentNode,start:'top bottom',end:'bottom top',scrub:true}})});
   /* steps line fills */
   G.to('#steps-fill',{scaleY:1,ease:'none',scrollTrigger:{trigger:'#steps',start:'top 70%',end:'bottom 60%',scrub:true}});
 

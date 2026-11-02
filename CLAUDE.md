@@ -14,7 +14,11 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
 - `media/`: sahifadagi videolar va rasmlar.
   - `hero-m.jpg`: hero uchun harakatsiz rasm (telefon va Telegram'da ishlatiladi).
   - `hero2.mp4`: hero video (faqat sichqonchali kompyuterda).
-  - `trailer.*`, `v1–v5.mp4/jpg`, `m1–m4.jpg`, `portrait.jpg`, `avatar.jpg`, `cta.jpg`.
+  - `main.mp4` + `main.jpg`: **asosiy video** (3:18). Kanaldagi «Bugun psixolog bo‘lish shunchaki sertifikat emas» posti (t.me/Treningsuz/24489), manba `IMG_3435.MOV`.
+  - `v1.mp4` + `v1.jpg`: qo‘shimcha video (1:15), «Профессионал психолог» posti, manba `IMG_1206.MOV`.
+  - Mijoz talabi: sahifada **faqat shu 2 video** turadi. Qolgan videolar reklama uchun, ular qo‘yilmaydi.
+  - Videolar artifact limiti uchun 15 MB dan kichik kodlangan (`main.mp4` 540x960, ~14 MB).
+  - `m1–m4.jpg` (modul kartalari foni), `avatar.jpg`, `cta.jpg`, `hero2.mp4/jpg` (hero fon halqasi, asosiy videodan 12 soniya).
   - `og.jpg`: havola ulashilganda chiqadigan preview, 1200x630.
   - `icon-180.png`, `favicon-32.png`.
   - `logo.svg`: footerda CSS mask sifatida ishlatiladi.
@@ -37,18 +41,20 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
 
 ## Bo‘limlar (id bo‘yicha)
 
-1. `#top`: hero va countdown.
+1. `#top`: hero va countdown. «Kurs haqida video · 3:18» tugmasi asosiy videoni ochadi.
 2. Mavzular marquee'si.
-3. `#tamoyil`: manifest. Yarim oy to‘liq halqaga aylanadi (`#ring-inner`, `setRing`).
-4. Raqamlar.
-5. `#dastur`: modullar. Desktopda gorizontal pin galereya.
-6. `#ustoz`: treyler va bio.
-7. `#videolar`: video lentasi.
+3. `#kurs`: asosiy video kartasi (`#kvid`, `data-open="0"`) va kursning 4 yo‘nalishi.
+4. Raqamlar: 3 oy, haftada 2 marta, 4 modul, 12 mavzu, 1 kun bepul.
+5. `#dastur`: «3 oyda nimalarni o‘rganasiz». 4 modul kartasi (grid), mavzular 01–12 raqamlangan.
+6. `#tamoyil`: manifest. Yarim oy to‘liq halqaga aylanadi (`#ring-inner`, `setRing`).
+7. `#ustoz`: bio va qo‘shimcha video (`data-open="1"`).
 8. `#mos`: "Bu kurs sizga mosmi?".
 9. `#qanday`: 3 qadam.
 10. `#savollar`: FAQ.
 11. `#yozilish`: yakuniy CTA va forma.
 12. `#dock`: pastki panel.
+
+Pleyer ro‘yxati JS'dagi `vids` massivida: 0 bu `main.mp4`, 1 bu `v1.mp4`.
 
 URL parametrlari:
 - `?to=yozilish`: sahifa ochilishi bilan formaga o‘tadi.
@@ -91,7 +97,13 @@ Sahifa yoki Mini App fonga o‘tganda barcha videolar pauza qilinadi.
 
 ## Faktlar (faqat mijoz postlaridan)
 
-- Kurs: 5 oy, haftada 3 marta. Onlayn yoki oflayn qatnashish mumkin.
+- Kurs: **3 oy, haftada 2 marta** (mijoz 2-noyabrda tuzatgan, avval 5 oy / 3 marta deb yozilgan edi). Onlayn yoki oflayn qatnashish mumkin.
+- Kursning 4 yo‘nalishi (24489-postdan):
+  - Konsultatsiya olib borishning ilmiy texnologiyalari.
+  - Ong osti bilan ishlash mexanizmlari.
+  - Mijoz bilan xavfsiz va professional ishlash.
+  - Psixolog va trener sifatida fikrlash modeli.
+- Kurs «chuqur, tizimli, intensiv», maqsad «real ishlashga tayyorlash», joylar cheklangan (o‘sha post).
 - Sertifikat: "sertifikatga ega bo‘lish imkoniyati" bor (aynan shu so‘z bilan).
 - Har bir modulda alohida professional psixolog bilan ishlanadi.
 - 4 modul, jami 12 mavzu.
@@ -107,9 +119,8 @@ Sahifa yoki Mini App fonga o‘tganda barcha videolar pauza qilinadi.
 ## Ochiq vazifalar
 
 - Vercel'ga deploy qilish, `SITE_URL` va `ADMIN_CHAT_ID` ni to‘ldirish (`docs/BOT_SOZLASH.md` ga qarang).
-- Video nomlari hozircha joyiga qarab qo‘yilgan. Haqiqiy mavzular mijozdan olinishi kerak.
 - Narx noma’lum.
-- @treningsuz qaysi platformada ekani noma’lum.
+- Kanal: Telegram @Treningsuz (Global Trainings).
 
 ## Dizayn qoidalari (landing-page-design skill asosida)
 
