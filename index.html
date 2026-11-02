@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="utf-8">
@@ -9,6 +9,10 @@
 <meta property="og:title" content="Professional psixolog trener · Global Trainings Group">
 <meta property="og:description" content="3 oylik amaliy kurs, haftada 2 marta. Birinchi tanishtiruv kuni bepul: 12-noyabr, 15:00.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://nshakhobiddin.github.io/GTGTrenerKurs/">
+<meta property="og:site_name" content="Global Trainings Group">
+<meta property="og:locale" content="uz_UZ">
+<link rel="canonical" href="https://nshakhobiddin.github.io/GTGTrenerKurs/">
 <meta name="theme-color" content="#000000">
 <meta name="gt-api" content="">
 <meta property="og:image" content="https://nshakhobiddin.github.io/GTGTrenerKurs/media/og.jpg">
@@ -287,6 +291,7 @@ main{overflow-x:clip}
 .kvid.is-playing::after{opacity:0}
 .kvid .tplay{border:0;padding:0;cursor:pointer;transition:transform 500ms var(--ease),opacity 300ms var(--ease)}
 .kvid.is-playing .tplay{opacity:0;transform:scale(.8);pointer-events:none}
+.kvid.is-playing .tplay:focus-visible{opacity:1;transform:none}
 .kvid .kv-cap{transition:opacity 400ms var(--ease),transform 400ms var(--ease)}
 .kvid.is-playing .kv-cap{opacity:0;transform:translateY(var(--s-75))}
 .kv-sound{cursor:pointer;color:var(--fg);font:inherit}
@@ -333,7 +338,7 @@ main{overflow-x:clip}
 .fit-row:active{transform:scale(.99)}
 .fit-n{color:var(--dim);font-variant-numeric:tabular-nums}
 .fit-t{display:grid;gap:var(--s-50);min-width:0}
-.fit-t p{color:var(--muted)}
+.fit-d{color:var(--muted);text-wrap:pretty}
 .chk{display:grid;place-items:center;width:var(--s-500);height:var(--s-500);border-radius:var(--r-full);border:1px solid var(--line);color:transparent;transition:background-color 300ms var(--ease),border-color 300ms var(--ease),color 300ms var(--ease),transform 500ms var(--ease)}
 .fit-row[aria-pressed="true"]{border-color:var(--accent-ink);background:var(--accent-soft)}
 .fit-row[aria-pressed="true"] .chk{background:var(--accent);border-color:var(--accent);color:var(--on-accent);transform:scale(1.06)}
@@ -349,6 +354,7 @@ main{overflow-x:clip}
 .split-aside{display:grid;gap:var(--s-300);align-content:start}
 .split-aside p{color:var(--muted)}
 @media (min-width:1024px){.split{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s-800)}.split-aside{position:sticky;top:calc(var(--s-900) + var(--s-200))}}
+.steps-wrap{position:relative}
 .steps{position:relative;display:grid;gap:var(--s-300)}
 .steps-line{position:absolute;left:20px;top:var(--s-500);bottom:var(--s-500);width:1px;background:var(--line)}
 .steps-line i{display:block;width:100%;height:100%;background:var(--accent-ink);transform-origin:50% 0;transform:scaleY(0)}
@@ -418,6 +424,7 @@ form .btn{width:100%}
 
 
 .hp{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .chips{display:flex;flex-wrap:wrap;gap:var(--s-75)}
 .chips input{position:absolute;opacity:0;pointer-events:none}
 .chips label{display:inline-flex;align-items:center;padding:var(--s-75) var(--s-200);border-radius:var(--r-full);border:1px solid var(--line);background:var(--bg);color:var(--muted);cursor:pointer;transition:background-color 300ms var(--ease),border-color 300ms var(--ease),color 300ms var(--ease)}
@@ -462,20 +469,6 @@ textarea:focus-visible{outline:2px solid var(--focus);outline-offset:0;border-co
 .cursor.big .cursor-in span{opacity:1}
 @media (pointer:fine) and (min-width:1024px){.has-cursor .cursor{display:block}}
 
-/* ---------- player ---------- */
-.player{width:min(100% - 32px,440px);max-height:calc(100% - 32px);padding:0;border:1px solid var(--glass-line);border-radius:var(--r-3xl);background:var(--bg-2);color:var(--fg);overflow:hidden;opacity:0;transform:translateY(var(--s-200)) scale(.98);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
-.player.is-h{width:min(100% - 32px,1040px)}
-.player.in{opacity:1;transform:none}
-.player::backdrop{background:rgba(0,0,0,.84);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.player video{width:100%;max-height:calc(100dvh - 140px);aspect-ratio:9/16;object-fit:contain;background:var(--bg)}
-.player.is-h video{aspect-ratio:16/9}
-.player-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s-100);padding:var(--s-100) var(--s-100) var(--s-100) var(--s-200)}
-.player-bar > div:first-child{display:grid;min-width:0;flex:1 1 auto}
-.pbtns{display:flex;gap:var(--s-50)}
-.pbtn{display:grid;place-items:center;width:var(--s-500);height:var(--s-500);border:0;border-radius:var(--r-full);background:rgba(255,255,255,.08);color:var(--fg);cursor:pointer;transition:background-color 300ms var(--ease)}
-.pbtn:hover{background:rgba(255,255,255,.16)}
-.pbtn:active{transform:scale(.96)}
-.player-err{padding:var(--s-300)}
 
 .toast{position:fixed;z-index:70;left:50%;bottom:calc(var(--s-900) + env(safe-area-inset-bottom,0px));padding:var(--s-75) var(--s-200);border-radius:var(--r-full);background:var(--fg);color:var(--bg);opacity:0;transform:translate(-50%,var(--s-200));transition:opacity 300ms var(--ease),transform 500ms var(--ease);pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -483,21 +476,11 @@ textarea:focus-visible{outline:2px solid var(--focus);outline-offset:0;border-co
 
 /* ---------- phones and Telegram: calm media ---------- */
 .hero-poster{animation:kb 16s var(--ease) infinite alternate}
-.hero-live .hero-poster{animation:none}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
-.hero-media video,.hero-poster,.kvid > img,.kvid video{pointer-events:none}
-html.modal-open,html.modal-open body{overflow:hidden}
-@media (max-width:767px){
-  .player,.player.is-h{width:100%;height:100%;max-width:none;max-height:none;margin:0;border:0;border-radius:0;flex-direction:column;background:#000000}
-  .player[open]{display:flex}
-  .player video,.player.is-h video{flex:1 1 auto;min-height:0;max-height:none;height:auto;aspect-ratio:auto}
-  .player-err{flex:1 1 auto}
-  .player-bar{padding:var(--s-100) max(16px,env(safe-area-inset-right,0px)) calc(var(--s-100) + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-  .pbtn{width:var(--s-600);height:var(--s-600)}
-}
+.hero-poster,.kvid > img,.kvid video{pointer-events:none}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition-property:opacity,color,background-color,border-color!important}
-  .menu nav a,.menu-foot,.dock,.player{transform:none}
+  .menu nav a,.menu-foot,.dock{transform:none}
   .dock{opacity:0;transition:opacity 300ms var(--ease)}
   .dock.show{opacity:1}
   @media (min-width:768px){.dock,.dock.show{transform:translateX(-50%)}}
@@ -527,7 +510,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menyuni ochish"><span></span><span></span></button>
 </header>
 
-<div class="menu" id="menu" aria-hidden="true">
+<div class="menu" id="menu" aria-hidden="true" inert>
   <nav aria-label="Mobil menyu" class="heading-3">
     <a href="#kurs" style="--i:0"><small>01</small>Kurs haqida</a>
     <a href="#dastur" style="--i:1"><small>02</small>Dastur</a>
@@ -548,7 +531,8 @@ html.modal-open,html.modal-open body{overflow:hidden}
     <div class="hero-copy">
       <div class="hero-top">
         <span class="chip caption-1 hx"><span class="dot"><svg class="icon icon-sm"><use href="#i-calendar-blank"/></svg></span>1-kun bepul · 12-noyabr, 15:00</span>
-        <h1 class="hero-title heading-2 md-display-2 xl-display-1" aria-label="Psixolog trener bo‘lib yetishing">
+        <h1 class="hero-title heading-2 md-display-2 xl-display-1">
+          <span class="sr-only">Psixolog trener bo‘lib yetishing</span>
           <span class="hl" aria-hidden="true"><span>Psixolog</span></span>
           <span class="hl" aria-hidden="true"><span>trener bo‘lib</span></span>
           <span class="hl" aria-hidden="true"><span>yetishing</span></span>
@@ -586,7 +570,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
     </div>
   </div>
 
-  <div class="marquee" aria-label="Kursdagi mavzular">
+  <div class="marquee" role="group" aria-label="Kursdagi mavzular">
     <div class="mq-track" id="mq">
       <div class="mq-group heading-4 md-heading-2">
         <span>Tranzakt analiz</span><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M66.02 4.75A48 48 0 1 0 97.15 41.01A42.63 42.63 0 1 1 66.02 4.75Z"/></svg>
@@ -607,9 +591,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
   <div class="wrap kurs">
     <div class="kvid" id="kvid" data-cursor="Ko‘rish">
       <img src="media/main.jpg" alt="" loading="lazy" width="720" height="1280">
-      <video id="kv-video" playsinline preload="none" poster="media/main.jpg" data-src="media/main.mp4?v=3" aria-label="Kurs haqida ustozdan, 3 daqiqa 25 soniya"></video>
+      <video id="kv-video" playsinline preload="none" poster="media/main.jpg" data-src="media/main.mp4?v=3" aria-hidden="true"></video>
       <span class="kv-top"><button class="pill caption-4 kv-sound" id="kv-sound" type="button" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-speaker-high"/></svg><span>Ovoz bilan</span></button><span class="kv-dur caption-4 num" id="kv-dur">3:25</span></span>
-      <button class="tplay" id="kv-play" type="button" aria-label="Videoni ovoz bilan ko‘rish"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></button>
+      <button class="tplay" id="kv-play" type="button" aria-label="Videoni ovoz bilan ko‘rish, 3 daqiqa 25 soniya"><svg class="icon icon-xl"><use href="#i-play-fill"/></svg></button>
       <span class="kv-cap"><span class="title-2">Kurs haqida ustozdan</span><span class="caption-5 muted">Dilshod Mannopov · 3 daqiqa</span></span>
       <span class="kv-prog" aria-hidden="true"><i id="kv-prog"></i></span>
     </div>
@@ -772,9 +756,9 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <p class="body-3 md-body-7">O‘zingizga tegishlilarini belgilang.</p>
     </div>
     <div class="fit" data-reveal>
-      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">01</span><span class="fit-t"><span class="title-1">Shaxsiy rivojlanishni istayman</span><p class="body-6">O‘zimni yaxshiroq tushunish va ichki muvozanat topish men uchun muhim.</p></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
-      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">02</span><span class="fit-t"><span class="title-1">Trening o‘tkazishni o‘rganmoqchiman</span><p class="body-6">Dastur tuzish, guruh oldida gapirish va guruhni boshqarishni bilmoqchiman.</p></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
-      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">03</span><span class="fit-t"><span class="title-1">Mijozlar bilan professional ishlamoqchiman</span><p class="body-6">Konsultatsiyani qoidalar asosida o‘tkazib, mijozga to‘g‘ri yordam bermoqchiman.</p></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
+      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">01</span><span class="fit-t"><span class="title-1">Shaxsiy rivojlanishni istayman</span><span class="body-6 fit-d">O‘zimni yaxshiroq tushunish va ichki muvozanat topish men uchun muhim.</span></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
+      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">02</span><span class="fit-t"><span class="title-1">Trening o‘tkazishni o‘rganmoqchiman</span><span class="body-6 fit-d">Dastur tuzish, guruh oldida gapirish va guruhni boshqarishni bilmoqchiman.</span></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
+      <button class="fit-row" type="button" aria-pressed="false"><span class="fit-n body-4">03</span><span class="fit-t"><span class="title-1">Mijozlar bilan professional ishlamoqchiman</span><span class="body-6 fit-d">Konsultatsiyani qoidalar asosida o‘tkazib, mijozga to‘g‘ri yordam bermoqchiman.</span></span><span class="chk"><svg class="icon"><use href="#i-check"/></svg></span></button>
     </div>
     <div class="fit-res" aria-live="polite">
       <div class="fit-msg"><span class="meter" aria-hidden="true"><i></i><i></i><i></i></span><span class="body-5" id="fit-text">Sizga mos kelganlarini belgilang.</span></div>
@@ -791,12 +775,14 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <h2 class="heading-3 md-heading-2">Birinchi qadam bepul</h2>
       <p class="body-3 md-body-7">Tanishtiruv kunida kurs va ustoz bilan tanishasiz, keyin qaror qilasiz.</p>
     </div>
+    <div class="steps-wrap">
+    <span class="steps-line" aria-hidden="true"><i id="steps-fill"></i></span>
     <ol class="steps" id="steps">
-      <span class="steps-line" aria-hidden="true"><i id="steps-fill"></i></span>
       <li class="step" data-reveal><span class="step-dot body-4">1</span><div class="step-body"><span class="label">Bugun</span><h3 class="title-1">Yoziling</h3><p class="body-3">Ism va raqamingizni qoldiring yoki +998 90 005 00 19 raqamiga qo‘ng‘iroq qiling.</p></div></li>
       <li class="step free" data-reveal><span class="step-dot body-4">2</span><div class="step-body"><span class="label" style="color:var(--accent-ink)">12-noyabr, 15:00 · bepul</span><h3 class="title-1">Tanishtiruv kuniga keling</h3><p class="body-3">Toshkent, Chilonzor, 11-a uy. Mo‘ljal: Kohinur «Korzinka» ro‘parasi.</p><a class="link body-4" href="https://yandex.uz/maps/org/global_trainings/17100811275/?lang=ru&amp;ll=69.204693%2C41.273786&amp;source=wizbiz_new_map_single&amp;z=15" target="_blank" rel="noopener" style="justify-self:start">Xaritada ochish <svg class="icon icon-sm"><use href="#i-arrow-up-right"/></svg></a></div></li>
       <li class="step" data-reveal><span class="step-dot body-4">3</span><div class="step-body"><span class="label">3 oy</span><h3 class="title-1">Kursni boshlang</h3><p class="body-3">Ma’qul kelsa, kursga qo‘shilasiz. Darslar haftada 2 marta, onlayn yoki oflayn.</p></div></li>
     </ol>
+    </div>
   </div>
 </section>
 
@@ -809,7 +795,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <p class="body-3">Javob topilmasa, Telegramda yozing yoki qo‘ng‘iroq qiling.</p>
       <div class="contact-row">
         <a class="btn btn-ghost button-sm" href="https://t.me/Global_Admin19" target="_blank" rel="noopener"><svg class="icon icon-sm"><use href="#i-telegram-logo"/></svg>@Global_Admin19</a>
-        <a class="body-5 num" href="tel:+998900050019" style="text-decoration:none">+998 90 005 00 19</a>
+        <a class="body-5 num" href="tel:+998900050019" style="text-decoration:none">+998&nbsp;90&nbsp;005&nbsp;00&nbsp;19</a>
         <button class="copy-btn caption-4" type="button" data-copy="+998900050019"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Nusxa</button>
       </div>
     </div>
@@ -845,7 +831,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <ul class="flist">
         <li><svg class="icon"><use href="#i-calendar-blank"/></svg><div><span class="body-2">12-noyabr, payshanba, soat 15:00</span><span class="caption-2 muted">Tanishtiruv kuni</span></div></li>
         <li><svg class="icon"><use href="#i-map-pin"/></svg><div><span class="body-2">Toshkent, Chilonzor, 11-a uy</span><span class="caption-2 muted">Mo‘ljal: Kohinur «Korzinka» ro‘parasi</span></div></li>
-        <li><svg class="icon"><use href="#i-phone"/></svg><div><span class="contact-row"><a class="body-2 num" href="tel:+998900050019" style="text-decoration:none">+998 90 005 00 19</a><button class="copy-btn caption-4" type="button" data-copy="+998900050019"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Nusxa</button></span><span class="caption-2 muted">Ma’lumot uchun</span></div></li>
+        <li><svg class="icon"><use href="#i-phone"/></svg><div><span class="contact-row"><a class="body-2 num" href="tel:+998900050019" style="text-decoration:none">+998&nbsp;90&nbsp;005&nbsp;00&nbsp;19</a><button class="copy-btn caption-4" type="button" data-copy="+998900050019"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Nusxa</button></span><span class="caption-2 muted">Ma’lumot uchun</span></div></li>
       </ul>
     </div>
 
@@ -863,7 +849,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
         </div>
         <div class="field">
           <label class="body-5" for="f-phone">Telefon raqamingiz</label>
-          <div class="phone"><span class="body-3">+998</span><input type="tel" id="f-phone" name="phone" inputmode="tel" autocomplete="tel-national" placeholder="90 123 45 67" aria-describedby="e-phone"></div>
+          <div class="phone"><span class="body-3">+998</span><input type="tel" id="f-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="90 123 45 67" aria-describedby="e-phone"></div>
           <span class="err caption-4" id="e-phone" hidden>Raqam to‘liq emas. 9 ta raqam kiriting, masalan 90 123 45 67.</span>
         </div>
         <fieldset>
@@ -911,15 +897,14 @@ html.modal-open,html.modal-open body{overflow:hidden}
           <h3 class="heading-5" id="done-title">Arizangiz tayyor</h3>
           <p class="body-3" id="done-text">«Telegramda ochish» tugmasini bosing. Ariza @Global_Admin19 chatida tayyor turadi, faqat «Yuborish»ni bosing.</p>
         </div>
-        <pre class="msg-preview" id="msg-preview" aria-label="Yuboriladigan xabar"></pre>
+        <pre class="msg-preview" id="msg-preview"></pre>
         <div class="actions">
           <a class="btn btn-primary btn-lg button-md" id="tg-send" href="https://t.me/Global_Admin19" target="_blank" rel="noopener"><svg class="icon"><use href="#i-telegram-logo"/></svg>Telegramda ochish</a>
           <button class="btn btn-ghost btn-lg button-md" type="button" id="copy-msg"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Matnni nusxalash</button>
           <button class="btn btn-ghost btn-lg button-md" type="button" id="edit">O‘zgartirish</button>
         </div>
-        <p class="body-6 muted">Telegram ochilmasa, matnni nusxalab @Global_Admin19 ga yuboring yoki qo‘ng‘iroq qiling: <a class="num" href="tel:+998900050019">+998 90 005 00 19</a></p>
+        <p class="body-6 muted">Telegram ochilmasa, matnni nusxalab @Global_Admin19 ga yuboring yoki qo‘ng‘iroq qiling: <a class="num" href="tel:+998900050019">+998&nbsp;90&nbsp;005&nbsp;00&nbsp;19</a></p>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -936,7 +921,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
       </div>
       <div class="fcol">
         <span class="label">Aloqa</span>
-        <a class="body-6 num" href="tel:+998900050019">+998 90 005 00 19</a>
+        <a class="body-6 num" href="tel:+998900050019">+998&nbsp;90&nbsp;005&nbsp;00&nbsp;19</a>
         <a class="body-6" href="https://t.me/Global_Admin19" target="_blank" rel="noopener">Telegram: @Global_Admin19</a>
       </div>
       <div class="fcol">
@@ -966,29 +951,10 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
 <div class="cursor" id="cursor" aria-hidden="true"><div class="cursor-in"><span id="cursor-label">Ko‘rish</span></div></div>
 
-<dialog class="player" id="player" aria-label="Video pleyer">
-  <video id="pv" controls playsinline preload="metadata" controlslist="nodownload" disablepictureinpicture></video>
-  <p class="player-err body-6" id="pv-err" hidden>Videoni yuklab bo‘lmadi. Internetni tekshirib, qayta urinib ko‘ring.</p>
-  <div class="player-bar">
-    <div><span class="body-4" id="pv-title">Video</span><span class="caption-5 muted" id="pv-sub">Dilshod Mannopov</span></div>
-    <div class="pbtns">
-      <button class="pbtn" type="button" id="pv-prev" aria-label="Oldingi video"><svg class="icon"><use href="#i-caret-left"/></svg></button>
-      <button class="pbtn" type="button" id="pv-next" aria-label="Keyingi video"><svg class="icon"><use href="#i-caret-right"/></svg></button>
-      <button class="pbtn" type="button" id="pv-close" aria-label="Yopish"><svg class="icon"><use href="#i-x"/></svg></button>
-    </div>
-  </div>
-</dialog>
-
 <div class="toast body-5" id="toast" role="status" aria-live="polite"></div>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Birinchi kun rostdan ham bepulmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. 12-noyabr soat 15:00 dagi tanishtiruv kuni bepul."}},
-{"@type":"Question","name":"Kurs qancha davom etadi?","acceptedAnswer":{"@type":"Answer","text":"3 oy. Darslar haftada 2 marta bo‘ladi."}},
-{"@type":"Question","name":"Onlayn qatnashsam bo‘ladimi?","acceptedAnswer":{"@type":"Answer","text":"Ha, darslarda onlayn yoki oflayn qatnashish mumkin."}},
-{"@type":"Question","name":"Sertifikat beriladimi?","acceptedAnswer":{"@type":"Answer","text":"Kursda sertifikatga ega bo‘lish imkoniyati bor."}},
-{"@type":"Question","name":"Narxi qancha?","acceptedAnswer":{"@type":"Answer","text":"Narx va to‘lov shartlarini +998 90 005 00 19 raqami yoki Telegramdagi @Global_Admin19 orqali bilib oling."}}
-]}
+{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Birinchi kun rostdan ham bepulmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. 12-noyabr soat 15:00 dagi tanishtiruv kuni bepul. Unda kurs va ustoz bilan tanishasiz, keyin qaror qilasiz."}},{"@type":"Question","name":"Kurs qancha davom etadi?","acceptedAnswer":{"@type":"Answer","text":"3 oy. Darslar haftada 2 marta bo‘ladi."}},{"@type":"Question","name":"Onlayn qatnashsam bo‘ladimi?","acceptedAnswer":{"@type":"Answer","text":"Ha, darslarda onlayn yoki oflayn qatnashish mumkin. Oflayn darslar Chilonzordagi o‘quv markazida o‘tadi."}},{"@type":"Question","name":"Sertifikat beriladimi?","acceptedAnswer":{"@type":"Answer","text":"Kursda sertifikatga ega bo‘lish imkoniyati bor. Shartlarini tanishtiruv kunida yoki administratordan so‘rang."}},{"@type":"Question","name":"Kurs kimlar uchun?","acceptedAnswer":{"@type":"Answer","text":"Shaxsiy rivojlanishni istaganlar, trening o‘tkazishni o‘rganmoqchi bo‘lganlar va mijozlar bilan ishlashda professional darajaga chiqmoqchi bo‘lganlar uchun. O‘z holatingizni tanishtiruv kunida ustoz bilan gaplashib oling."}},{"@type":"Question","name":"Har bir modulda psixolog bilan ishlash nima degani?","acceptedAnswer":{"@type":"Answer","text":"Har bir modulda alohida professional psixolog bilan ishlaysiz. Ustozning qoidasiga ko‘ra, psixolog trenerning ichki va tashqi olami muvozanatda bo‘lishi lozim."}},{"@type":"Question","name":"Narxi qancha?","acceptedAnswer":{"@type":"Answer","text":"Narx va to‘lov shartlarini +998 90 005 00 19 raqami yoki Telegramdagi @Global_Admin19 orqali bilib oling."}},{"@type":"Question","name":"Tanishtiruv kuni qayerda o‘tadi?","acceptedAnswer":{"@type":"Answer","text":"Toshkent shahri, Chilonzor, 11-a uy. Mo‘ljal: Kohinur «Korzinka» ro‘parasi."}}]},{"@type":"EducationEvent","name":"«Professional psixolog trener» kursi: bepul tanishtiruv kuni","description":"Dilshod Mannopov bilan 3 oylik kurs, darslar haftada 2 marta. Tanishtiruv kuni bepul.","startDate":"2026-11-12T15:00:00+05:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"image":"https://nshakhobiddin.github.io/GTGTrenerKurs/media/og.jpg","url":"https://nshakhobiddin.github.io/GTGTrenerKurs/","location":{"@type":"Place","name":"Global Trainings","address":{"@type":"PostalAddress","streetAddress":"Chilonzor, 11-a uy","addressLocality":"Toshkent","addressCountry":"UZ"}},"organizer":{"@type":"Organization","name":"Global Trainings Group","telephone":"+998900050019","url":"https://t.me/Treningsuz"},"performer":{"@type":"Person","name":"Dilshod Mannopov"},"offers":{"@type":"Offer","price":"0","priceCurrency":"UZS","availability":"https://schema.org/LimitedAvailability","url":"https://nshakhobiddin.github.io/GTGTrenerKurs/?to=yozilish"}}]}
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1016,7 +982,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
   var inTGWeb=!!window.TelegramWebviewProxy||/Telegram/i.test(navigator.userAgent)||/tgWebApp/.test(location.hash);
   var lite=touch||inTGWeb||saveData;          /* no autoplaying video, no smooth-scroll hijack */
   var fromBot=/[?&]src=bot(&|$)/.test(location.search);
-  var tgApp=null, signupVisible=false, playerOpen=false;
+  var tgApp=null, signupVisible=false;
   if(inTGWeb){root.classList.add('in-telegram');$$('a[href^="https://t.me/"]').forEach(function(a){a.removeAttribute('target')})}
   if(lite)root.classList.add('lite');
   function getTG(){var t=window.Telegram&&window.Telegram.WebApp;return t&&t.platform&&t.platform!=='unknown'?t:null}
@@ -1071,8 +1037,11 @@ html.modal-open,html.modal-open body{overflow:hidden}
   }
   var menuBtn=$('.menu-btn'), menu=$('#menu');
   function setMenu(open){
+    var was=menu.classList.contains('open');
     menuBtn.setAttribute('aria-expanded',open);menuBtn.setAttribute('aria-label',open?'Menyuni yopish':'Menyuni ochish');
-    menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',!open);
+    menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',!open);menu.inert=!open;
+    if(open&&!was){var first=$('nav a',menu);if(first)setTimeout(function(){first.focus({preventScroll:true})},60)}
+    else if(!open&&was&&menu.contains(document.activeElement))menuBtn.focus({preventScroll:true});
     if(lenis){open?lenis.stop():lenis.start()}else{root.style.overflow=open?'hidden':''}
     tgUI();
   }
@@ -1091,42 +1060,16 @@ html.modal-open,html.modal-open body{overflow:hidden}
   function setRing(p){var cx=54.79-4.79*p,cy=45.88+4.12*p,r=42.63-2.63*p;inner.style.transform='translate('+cx.toFixed(2)+'px,'+cy.toFixed(2)+'px) scale('+r.toFixed(2)+')'}
   function setWords(p){var n=Math.round(p*words.length);words.forEach(function(w,i){w.classList.toggle('on',i<n)})}
 
-  /* video player */
-  var vids=[
-    {src:'media/main.mp4?v=3',poster:'media/main.jpg',title:'Kurs haqida ustozdan',sub:'Dilshod Mannopov · 3:25'}
-  ];
-  var dlg=$('#player'), pv=$('#pv'), pvErr=$('#pv-err'), cur=0, heroV=$('#hero-video'), opener=null;
-  if(vids.length<2){$('#pv-prev').hidden=true;$('#pv-next').hidden=true}
-  function load(i){
-    cur=(i+vids.length)%vids.length;var v=vids[cur];
-    pvErr.hidden=true;pv.hidden=false;dlg.classList.toggle('is-h',!!v.h);
-    pv.poster=v.poster;pv.src=v.src;$('#pv-title').textContent=v.title;$('#pv-sub').textContent=v.sub;
-    var pr=pv.play();if(pr&&pr.catch)pr.catch(function(){});
-  }
-  pv.addEventListener('error',function(){if(pv.getAttribute('src')){pv.hidden=true;pvErr.hidden=false}});
-  function openPlayer(i,from){
-    opener=from||null;if(heroLive)heroV.pause();if(lenis)lenis.stop();
-    playerOpen=true;root.classList.add('modal-open');tgUI();hap('tap');
-    if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
-    requestAnimationFrame(function(){dlg.classList.add('in')});load(i);
-  }
-  dlg.addEventListener('close',function(){
-    dlg.classList.remove('in');pv.pause();pv.removeAttribute('src');pv.load();if(lenis)lenis.start();
-    playerOpen=false;root.classList.remove('modal-open');tgUI();
-    if(heroLive){var p=heroV.play();if(p&&p.catch)p.catch(function(){})}
-    if(opener)opener.focus({preventScroll:true});
-  });
-  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
-  dlg.addEventListener('keydown',function(e){if(e.target===pv)return;if(e.key==='ArrowRight')load(cur+1);if(e.key==='ArrowLeft')load(cur-1)});
-  $('#pv-close').addEventListener('click',function(){dlg.close()});
-  $('#pv-prev').addEventListener('click',function(){load(cur-1)});
-  $('#pv-next').addEventListener('click',function(){load(cur+1)});
   /* main video plays inline in its card: with sound when it scrolls into view, pauses when it scrolls away */
   var kv=$('#kvid'), kvV=$('#kv-video'), kvSound=$('#kv-sound'), kvPlayBtn=$('#kv-play'), kvProg=$('#kv-prog'), kvDur=$('#kv-dur');
   var kvUserPaused=false, kvUserMuted=false, kvAutoMuted=false, kvHold=0, kvRatio=0;
+  var kvAuto=!reduce&&!saveData;   /* reduced motion or data saver: the video waits for a tap */
   function fmtT(t){t=Math.max(0,Math.round(t||0));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
   function kvState(){
     kv.classList.toggle('is-playing',!kvV.paused&&!kvV.ended);kv.classList.toggle('is-muted',kvV.muted);
+    var playing=!kvV.paused&&!kvV.ended;
+    kvPlayBtn.setAttribute('aria-label',playing?'Videoni to‘xtatish':'Videoni ovoz bilan ko‘rish, 3 daqiqa 25 soniya');
+    $('use',kvPlayBtn).setAttribute('href',playing?'#i-pause-fill':'#i-play-fill');
     kvSound.setAttribute('aria-pressed',String(!kvV.muted));
     $('use',kvSound).setAttribute('href',kvV.muted?'#i-speaker-slash':'#i-speaker-high');
     $('span',kvSound).textContent=kvV.muted?'Ovozni yoqish':'Ovoz bilan';
@@ -1167,7 +1110,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
     new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)kvLoad()})},{rootMargin:'200px 0px'}).observe(kv);
     new IntersectionObserver(function(es){
       var r=es[0].intersectionRatio;kvRatio=r;
-      if(r>=.6){if(!kvUserPaused&&kvV.paused&&!playerOpen)kvPlay(true)}
+      if(r>=.6){if(kvAuto&&!kvUserPaused&&kvV.paused)kvPlay(true)}
       else if(r<.3){if(!kvV.paused&&Date.now()>kvHold)kvPause(false);if(r===0)kvUserPaused=false}
     },{threshold:[0,.3,.6,.9]}).observe(kv);
   }
@@ -1177,9 +1120,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
     var y=kv.getBoundingClientRect().top+window.scrollY-Math.max(0,(innerHeight-kv.offsetHeight)/2);
     if(lenis)lenis.scrollTo(y,{duration:1.2});else window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
   })});
-  /* hero loop only on desktop with a mouse; phones and Telegram get the still image */
-  var heroLive=false;
-  if(heroV&&!lite&&!reduce){heroV.hidden=false;heroV.src=heroV.getAttribute('data-src');var hp=heroV.play();heroLive=true;root.classList.add('hero-live');if(hp&&hp.catch)hp.catch(function(){heroV.hidden=true;heroLive=false;root.classList.remove('hero-live')})}
 
   /* fit check */
   var fits=$$('.fit-row'), meter=$$('.meter i'), fitText=$('#fit-text'), fitLink=$('#fit-link');
@@ -1270,7 +1210,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
     var fb=function(){var r=document.createRange();r.selectNodeContents($('#msg-preview'));var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);toast('Matn belgilandi, nusxa oling')};
     try{navigator.clipboard.writeText(lastMsg).then(function(){toast('Matn nusxalandi')},fb)}catch(_){fb()}
   });
-  $('#tg-send').addEventListener('click',function(e){if(tgApp){e.preventDefault();tgApp.openTelegramLink(this.href)}});
   $('#edit').addEventListener('click',function(){done.hidden=true;form.hidden=false;nameI.focus();tgUI()});
   form.addEventListener('input',function(){if(!tgApp||!tgApp.enableClosingConfirmation)return;if(nameI.value||phoneI.value||$('#f-note').value)tgApp.enableClosingConfirmation();else tgApp.disableClosingConfirmation()});
   form.addEventListener('change',function(e){if(e.target.type==='radio'||e.target.type==='checkbox')hap('sel')});
@@ -1284,15 +1223,15 @@ html.modal-open,html.modal-open body{overflow:hidden}
   }
 
   /* pause every video when the page or the Mini App goes to the background */
-  function pauseAll(){pv.pause();if(heroLive)heroV.pause();if(!kvV.paused)kvV.pause()}
-  document.addEventListener('visibilitychange',function(){if(document.hidden)pauseAll();else if(heroLive&&!playerOpen){var p=heroV.play();if(p&&p.catch)p.catch(function(){})}});
+  function pauseAll(){if(!kvV.paused)kvV.pause()}
+  document.addEventListener('visibilitychange',function(){if(document.hidden)pauseAll()});
 
   /* Telegram Mini App */
   function tgUI(){
     if(!tgApp)return;
     try{
       var mb=tgApp.MainButton, bb=tgApp.BackButton;
-      if(playerOpen||menu.classList.contains('open')){bb.show();mb.hide();return}
+      if(menu.classList.contains('open')){bb.show();mb.hide();return}
       bb.hide();
       if(!done.hidden&&(fromBot||doneMode==='api')){mb.hide();return}
       var text=!done.hidden?'Telegramda ochish':(signupVisible?(fromBot?'Arizani yuborish':'Telegram orqali yuborish'):'Bepul darsga yozilish');
@@ -1314,7 +1253,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
     if(fromBot){$('#submit-label').textContent='Arizani yuborish';$('#submit-help').textContent='Ariza bot orqali administratorga avtomatik yuboriladi. Sahifa ma’lumotlaringizni saqlamaydi.'}
     try{
       tgApp.MainButton.onClick(function(){hap('tap','medium');if(!done.hidden){tgApp.openTelegramLink($('#tg-send').href);return}if(signupVisible){if(form.requestSubmit)form.requestSubmit();else form.dispatchEvent(new Event('submit',{cancelable:true}))}else goTo('#yozilish')});
-      tgApp.BackButton.onClick(function(){if(playerOpen){dlg.close();return}if(menu.classList.contains('open'))setMenu(false)});
+      tgApp.BackButton.onClick(function(){if(menu.classList.contains('open'))setMenu(false)});
       if(tgApp.onEvent)tgApp.onEvent('deactivated',pauseAll);
     }catch(_){}
     /* links: Telegram links stay in Telegram, other sites open outside the Mini App */

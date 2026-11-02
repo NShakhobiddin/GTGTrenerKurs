@@ -38,7 +38,9 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
 - `docs/BOT_SOZLASH.md`: BotFather va Vercel sozlash bo‘yicha qadamma-qadam yo‘riqnoma.
 - `tgcloud-bot/`: **asosiy bot varianti**, Telegram Serverless (BotFather → Serverless). Bitta fayl `tgcloud/handlers/message.js`.
   - `/start`, raqam yuborish, Mini App forma (`sendData`) va savollar @Global_Admin19 ga xabar bo‘lib boradi.
-  - Administrator chat ID'si bazaga o‘zi yoziladi: @Global_Admin19 botda `/start` bosadi.
+  - Administrator chat ID'si bazaga o‘zi yoziladi: @Global_Admin19 botda `/start` bosadi. Shundan keyin administrator shu akkauntga bog‘lanadi (username boshqa akkauntga o‘tsa ham). Almashtirish uchun `ADMIN_CHAT_ID` ga yangi raqam yoziladi.
+  - Spam cheklovi: bir odamdan bir daqiqada 5 tadan ortiq savol, 3 tadan ortiq raqam yoki ariza administratorga yuborilmaydi.
+  - Handler xatoda yiqilmaydi (try/catch), shuning uchun bir xil ariza ikki marta bormaydi.
   - Ishga tushirish yo‘riqnomasi: `tgcloud-bot/README.md`. Vercel varianti (`api/`, `lib/`) zaxira sifatida qoldi.
 - `.env.example`: kerakli o‘zgaruvchilar ro‘yxati.
   - `BOT_TOKEN`, `ADMIN_CHAT_ID`, `SITE_URL`, `WEBHOOK_SECRET`, `SETUP_KEY`, `ALLOWED_ORIGINS`.
@@ -59,7 +61,7 @@ Bu belgi "6" shaklida ko‘rinishi uchun alohida shriftdan olinadi (pastda bataf
 11. `#yozilish`: yakuniy CTA va forma.
 12. `#dock`: pastki panel.
 
-Pleyer ro‘yxati JS'dagi `vids` massivida faqat `main.mp4`. Video bitta bo‘lgani uchun oldingi/keyingi tugmalari yashiriladi.
+Video manzili `#kv-video` dagi `data-src` da (`media/main.mp4?v=3`). Video almashtirilsa, kesh yangilanishi uchun `?v=` raqami oshiriladi.
 
 URL parametrlari:
 - `?to=yozilish`: sahifa ochilishi bilan formaga o‘tadi.
@@ -77,9 +79,11 @@ Bu rejimda:
 
 **Asosiy video (`#kvid`, `#kv-video`)** kartaning o‘zida o‘ynaydi (hamma qurilmada, 9:16):
 - Karta 60% ko‘ringanda **ovoz bilan** o‘zi boshlanadi, 30% dan kam ko‘rinsa o‘zi pauza bo‘ladi, qaytib kelganda davom etadi.
+- `prefers-reduced-motion` yoki `saveData` yoqilgan bo‘lsa, video o‘zi boshlanmaydi, faqat bosilganda.
+- Klaviatura: `#kv-play` tugmasi video o‘ynayotganda ham fokusda ko‘rinadi, yorlig‘i «Videoni to‘xtatish» ga o‘zgaradi.
 - Brauzer ovozli autoplay'ni bloklasa, video ovozsiz boshlanadi va «Ovozni yoqish» tugmasi chiqadi. Foydalanuvchining birinchi teginishida ovoz o‘zi yoqiladi.
 - Kartaga bosish: to‘xtagan bo‘lsa ovoz bilan boshlaydi, ovozsiz bo‘lsa ovozni yoqadi, aks holda pauza qiladi.
-- Hero'dagi `data-open` tugmalari videoni ovoz bilan boshlab, kartaga skroll qiladi. Modal pleyer (`#player`) endi ishlatilmaydi.
+- Hero'dagi `data-open` tugmalari videoni ovoz bilan boshlab, kartaga skroll qiladi. Modal pleyer olib tashlangan.
 
 Sahifa yoki Mini App fonga o‘tganda barcha videolar pauza qilinadi.
 
@@ -128,7 +132,8 @@ Sahifa yoki Mini App fonga o‘tganda barcha videolar pauza qilinadi.
 
 ## Ochiq vazifalar
 
-- Vercel'ga deploy qilish, `SITE_URL` va `ADMIN_CHAT_ID` ni to‘ldirish (`docs/BOT_SOZLASH.md` ga qarang).
+- Sayt GitHub Pages'da: https://nshakhobiddin.github.io/GTGTrenerKurs/ (repo `NShakhobiddin/GTGTrenerKurs`, `main` filiali). `index.html` ga canonical va `og:url` shu manzil bilan yozilgan.
+- Bot Telegram Serverless'da (`tgcloud-bot/`). `message.js` o‘zgarsa, BotFather → Serverless → Handlers → message ga qayta qo‘yiladi. Vercel varianti (`api/`, `lib/`) faqat zaxira.
 - Narx noma’lum.
 - Kanal: Telegram @Treningsuz (Global Trainings).
 

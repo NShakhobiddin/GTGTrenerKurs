@@ -18,6 +18,10 @@ Har bir xabarda foydalanuvchi profiliga havola bo‘ladi. Uni bosib, odamga to�
 
 **Administrator:** @Global_Admin19 akkauntidan botga bir marta `/start` bosiladi. Shundan keyin hamma xabarlar shu chatga keladi. Administrator ulanmasidan oldin kelgan arizalar ham saqlanib turadi va ulanganda birdaniga yuboriladi. `/stats` buyrug‘i statistikani ko‘rsatadi.
 
+Administrator birinchi `/start` bosgan akkauntga bog‘lanadi. @Global_Admin19 username'i keyinchalik boshqa akkauntga o‘tib qolsa ham, arizalar begona odamga ketmaydi. Administratorni almashtirish kerak bo‘lsa, yangi akkauntdan botga `/id` yozing va chiqqan raqamni fayl boshidagi `ADMIN_CHAT_ID` ga qo‘ying.
+
+**Spamdan himoya:** bir odamdan bir daqiqada 5 tadan ortiq savol, 3 tadan ortiq raqam yoki ariza administratorga yuborilmaydi. Foydalanuvchiga «biroz kuting» degan javob boradi.
+
 ## O‘rnatish (BotFather ichida, kompyutersiz)
 
 1. @BotFather → botingiz → **Serverless** yoqilgan bo‘lsin.

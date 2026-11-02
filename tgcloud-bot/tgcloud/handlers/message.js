@@ -133,8 +133,24 @@ async function adminChatId() {
   return v ? Number(v) : 0;
 }
 
-const isAdminUser = (u) => (u.username || '').toLowerCase() === ADMIN_USERNAME.toLowerCase()
-  || (ADMIN_CHAT_ID && u.id === ADMIN_CHAT_ID);
+/**
+ * Administratormi? Birinchi marta /start bosgan @Global_Admin19 akkaunti bazaga bog‘lanadi.
+ * Keyin username boshqa akkauntga o‘tib qolsa ham, arizalar begona chatga ketmaydi.
+ * Administratorni almashtirish kerak bo‘lsa, ADMIN_CHAT_ID ga yangi raqamni yozing (/id buyrug‘i ko‘rsatadi).
+ */
+async function isAdmin(u, chatId) {
+  if (ADMIN_CHAT_ID) return u.id === ADMIN_CHAT_ID;
+  if ((u.username || '').toLowerCase() !== ADMIN_USERNAME.toLowerCase()) return false;
+  const prev = await getSetting('admin_chat_id');
+  return !prev || String(prev) === String(chatId);
+}
+
+/** Spamga qarshi: bir odamdan bir daqiqada `max` tadan ortiq shu turdagi xabar administratorga yuborilmaydi. */
+async function tooMany(fromId, kind, max) {
+  const row = await db.get(sql`SELECT count(*) AS c FROM gt_leads
+    WHERE tg_id = ${fromId} AND kind = ${kind} AND created_at > unixepoch() - 60`);
+  return (row ? Number(row.c) : 0) >= max;
+}
 
 /** Arizani bazaga yozadi va administratorga yuboradi. Administrator hali ulanmagan bo‘lsa kutib turadi. */
 async function notifyAdmin(fromId, kind, html) {
@@ -205,7 +221,7 @@ function formLeadText(a, u) {
 }
 
 const thanks = (name) => [
-  `Rahmat, ${esc(name)}! Ma’lumotlaringiz administratorga yuborildi.`,
+  `Rahmat${name ? ', ' + esc(name) : ''}! Ma’lumotlaringiz administratorga yuborildi.`,
   'Tez orada siz bilan bog‘lanishadi.',
   '',
   `🗓 Tanishtiruv kuni: <b>${EVENT}</b>, bepul`,
@@ -213,7 +229,17 @@ const thanks = (name) => [
 ].join('\n');
 
 // ---------------------------------------------------------------- asosiy handler
+// Xato bo‘lsa (masalan, foydalanuvchi botni bloklagan bo‘lsa) handler yiqilmaydi: xato logga yoziladi,
+// shunda platforma xabarni qayta yubormaydi va administratorga bir xil ariza ikki marta bormaydi.
 export default async function (message) {
+  try {
+    await handle(message);
+  } catch (e) {
+    console.error('handler error', e && (e.description || e.message || e));
+  }
+}
+
+async function handle(message) {
   const from = message.from;
   if (!from || from.is_bot) return;
   const chatId = message.chat.id;
@@ -231,7 +257,7 @@ export default async function (message) {
   await ensureTables();
 
   // ---- administrator
-  if (isAdminUser(from)) {
+  if (await isAdmin(from, chatId)) {
     if (cmd === '/stats') {
       const u = await db.get(sql`SELECT count(*) AS c FROM gt_users`);
       const all = await db.get(sql`SELECT count(*) AS c FROM gt_leads WHERE kind IN ('form', 'phone')`);
@@ -302,7 +328,7 @@ export default async function (message) {
       return;
     }
     await db.run(sql`UPDATE gt_users SET phone = ${a.phone} WHERE tg_id = ${from.id}`);
-    await notifyAdmin(from.id, 'form', formLeadText(a, from));
+    if (!(await tooMany(from.id, 'form', 3))) await notifyAdmin(from.id, 'form', formLeadText(a, from));
     await send(chatId, thanks(a.name), { reply_markup: userKeyboard });
     return;
   }
@@ -316,7 +342,7 @@ export default async function (message) {
     }
     const phone = normPhone(c.phone_number);
     await db.run(sql`UPDATE gt_users SET phone = ${phone} WHERE tg_id = ${from.id}`);
-    await notifyAdmin(from.id, 'phone', [
+    if (!(await tooMany(from.id, 'phone', 3))) await notifyAdmin(from.id, 'phone', [
       '📱 <b>Raqam qoldirdi</b> · tanishtiruv kuniga yozilmoqchi',
       '',
       `Ism: <b>${esc([c.first_name, c.last_name].filter(Boolean).join(' ') || fullName(from))}</b>`,
@@ -333,7 +359,7 @@ export default async function (message) {
     const maybePhone = normPhone(text);
     if (/^\+998\d{9}$/.test(maybePhone) && text.replace(/[\s()+-]/g, '').length <= 12) {
       await db.run(sql`UPDATE gt_users SET phone = ${maybePhone} WHERE tg_id = ${from.id}`);
-      await notifyAdmin(from.id, 'phone', [
+      if (!(await tooMany(from.id, 'phone', 3))) await notifyAdmin(from.id, 'phone', [
         '📱 <b>Raqam qoldirdi</b> (qo‘lda yozdi)',
         '',
         `Ism: <b>${esc(fullName(from))}</b>`,
@@ -342,6 +368,10 @@ export default async function (message) {
         ...whoLines(from),
       ].join('\n'));
       await send(chatId, thanks(from.first_name || ''), { reply_markup: userKeyboard });
+      return;
+    }
+    if (await tooMany(from.id, 'question', 5)) {
+      await send(chatId, 'Bir daqiqada juda ko‘p xabar yuborildi. Biroz kutib, keyin yana yozing.', { reply_markup: userKeyboard });
       return;
     }
     await notifyAdmin(from.id, 'question', [
